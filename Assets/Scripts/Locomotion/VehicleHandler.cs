@@ -45,18 +45,31 @@ public class VehicleHandler : MonoBehaviour
 			DropVehicle();
 		}
 
-		if (nearestPickup != null)
+		if (nearestPickup != null && !nearestPickup.GetComponent<Pickup>().isUsed)
 		{
 			PickupVehicle(nearestPickup);
 		}
 	}
 
-	private void DropVehicle()
+	public void DropVehicle()
 	{
-		SwitchState(LocomotionState.BASE);
 		currentPickup.SetActive(true);
+
+		if (currentPickup.GetComponent<Pickup>().isOneTimeOnly)
+		{
+			currentPickup.GetComponent<Pickup>().isUsed = true;
+			StartCoroutine(currentPickup.GetComponent<Pickup>().Respawn());
+		}
+
+		SwitchState(LocomotionState.BASE);
+
 		Vector2 targetPosition = (Vector2)transform.position + dropOffset;
+		float targetRotation = Random.Range(-180f, 180f);
 		currentPickup.transform.position = targetPosition;
+		currentPickup.transform.eulerAngles = new Vector3(currentPickup.transform.eulerAngles.x,
+    							currentPickup.transform.eulerAngles.y,
+    							currentPickup.transform.eulerAngles.z + targetRotation);
+
 		currentPickup = null;
 	}
 
@@ -119,6 +132,7 @@ public class VehicleHandler : MonoBehaviour
 				return;
 			}
 		}
+
 		Debug.LogWarning(currentState + " does not have an assigned vehicle.");
 	}
 }
