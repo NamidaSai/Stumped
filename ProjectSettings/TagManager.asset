@@ -14,7 +14,7 @@ TagManager:
   - Player
   - Ground
   - Pickup
-  - 
+  - Tiles
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 915370111
+    locked: 0
+  - name: Tilemap
+    uniqueID: 684395827
+    locked: 0
+  - name: Interactables
+    uniqueID: 1934946897
+    locked: 0
+  - name: Player
+    uniqueID: 1689476617
     locked: 0
