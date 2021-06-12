@@ -59,9 +59,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1942122063449504690, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: selfPrefab
+      value: 
+      objectReference: {fileID: 6394334894273572056}
     - target: {fileID: 1942122063449504694, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_Name
       value: BB8 Pickup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+--- !u!1 &6394334894273572056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1942122063449504694, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+  m_PrefabInstance: {fileID: 4778020202880472942}
+  m_PrefabAsset: {fileID: 0}
