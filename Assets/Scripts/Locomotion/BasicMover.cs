@@ -47,8 +47,9 @@ public class BasicMover : MonoBehaviour, IMover
 
 	public void Move(Vector2 moveThrottle)
 	{
+		if (myRigidbody == null) { return; }
+
 		float moveSpeedX;
-		bool playerIsTouchingGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"));
 
 		if (playerIsTouchingGround)
 		{

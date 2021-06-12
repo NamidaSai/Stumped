@@ -32,24 +32,22 @@ public class VehicleHandler : MonoBehaviour
 		if (currentVehicle == null)
 		{
 			currentVehicle = allVehicles[0];
+			currentVehicle.SetActive(true);
 		}
 	}
 
 	public void TryPickup()
 	{
-		Debug.Log("Called Try");
 		GameObject nearestPickup = GetClosestPickup();
 
 		if (currentPickup != null)
 		{
 			DropVehicle();
-			Debug.Log("Called Drop");
 		}
 
 		if (nearestPickup != null)
 		{
 			PickupVehicle(nearestPickup);
-			Debug.Log("Called Pickup");
 		}
 	}
 
@@ -120,10 +118,7 @@ public class VehicleHandler : MonoBehaviour
 				currentVehicle.SetActive(true);
 				return;
 			}
-			else
-			{
-				Debug.LogWarning(currentState + " does not have an assigned vehicle.");
-			}
 		}
+		Debug.LogWarning(currentState + " does not have an assigned vehicle.");
 	}
 }
