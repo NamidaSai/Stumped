@@ -19,4 +19,9 @@ public class PlayerController : MonoBehaviour
 	{
 		moveInput = value.Get<Vector2>();
 	}
+
+	private void OnPickup()
+	{
+		GetComponent<VehicleHandler>().TryPickup();
+	}
 }
