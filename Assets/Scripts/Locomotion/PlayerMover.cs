@@ -5,10 +5,12 @@ public class PlayerMover : MonoBehaviour
 	[SerializeField] float moveSpeed = 10f;
 	[SerializeField] float maxSpeed = 10f;
 	[SerializeField] float airSpeed = 5f;
+	[SerializeField] float bonusGravity = 9.8f;
 	[SerializeField] float jumpSpeed = 10f;
 
 	private Rigidbody2D myRigidbody;
 	private BoxCollider2D myFeet;
+	private bool playerIsTouchingGround;
 
 	private void Start()
 	{
@@ -16,9 +18,36 @@ public class PlayerMover : MonoBehaviour
 		myFeet = GetComponent<BoxCollider2D>();
 	}
 
+	private void FixedUpdate()
+	{
+		ApplyBonusGravity();
+		ClampMoveVelocity();
+	}
+
+	private void ApplyBonusGravity()
+	{
+		playerIsTouchingGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"));
+		if (!playerIsTouchingGround)
+		{
+			Vector2 currentVelocity = myRigidbody.velocity;
+			currentVelocity.y -= bonusGravity * Time.deltaTime;
+			myRigidbody.velocity = currentVelocity;
+		}
+	}
+
+	private void ClampMoveVelocity()
+	{
+		if (playerIsTouchingGround)
+		{
+			Vector2 currentVelocity = myRigidbody.velocity;
+			currentVelocity.x = Mathf.Clamp(currentVelocity.x, -maxSpeed, maxSpeed);
+			myRigidbody.velocity = currentVelocity;
+		}
+	}
+
 	public void Move(Vector2 moveThrottle)
 	{
-		float moveSpeedX = 0f;
+		float moveSpeedX;
 		bool playerIsTouchingGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"));
 
 		if (playerIsTouchingGround)
@@ -39,7 +68,8 @@ public class PlayerMover : MonoBehaviour
 
 	private void FlipSprite(Vector2 moveThrottle)
 	{
-		bool playerHasHorizontalSpeed = (Mathf.Abs(moveThrottle.x) > Mathf.Epsilon);
+		bool playerHasHorizontalSpeed = Mathf.Abs(moveThrottle.x) > Mathf.Epsilon;
+
 		if (playerHasHorizontalSpeed)
 		{
 			transform.localScale = new Vector3(Mathf.Sign(moveThrottle.x), transform.localScale.y, transform.localScale.z);
@@ -48,8 +78,6 @@ public class PlayerMover : MonoBehaviour
 
 	public void Jump()
 	{
-		bool playerIsTouchingGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"));
-
 		if (!playerIsTouchingGround) { return; }
 
 		float currentJumpSpeed = jumpSpeed * 100f;

@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 884050009}
   - component: {fileID: 884050008}
   m_Layer: 7
-  m_Name: Floor
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +631,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 3
-  m_LinearDrag: 0
+  m_LinearDrag: 0.4
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -693,10 +693,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c7f97299746e74aafec285d87f9750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 10
   maxSpeed: 2.5
-  airSpeed: 10
-  jumpSpeed: 2.4
+  airSpeed: 5
+  bonusGravity: 30
+  jumpSpeed: 5
 --- !u!70 &2072811363
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
