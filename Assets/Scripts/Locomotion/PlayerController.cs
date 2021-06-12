@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		if (GetComponentInChildren<IMover>() == null) { return; }
+
 		GetComponentInChildren<IMover>().Move(moveInput);
 
 		if (moveInput.y > 0.5f)
