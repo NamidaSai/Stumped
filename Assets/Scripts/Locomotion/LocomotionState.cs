@@ -1,6 +1,6 @@
 public enum LocomotionState
 {
-	BASIC,
+	BASE,
 	BB8,
 	POGO,
 	FLY

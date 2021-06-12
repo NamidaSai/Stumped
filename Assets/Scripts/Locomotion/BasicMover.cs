@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMover : MonoBehaviour
+public class BasicMover : MonoBehaviour, IMover
 {
 	[SerializeField] float moveSpeed = 10f;
 	[SerializeField] float maxSpeed = 10f;
@@ -14,7 +14,7 @@ public class PlayerMover : MonoBehaviour
 
 	private void Start()
 	{
-		myRigidbody = GetComponent<Rigidbody2D>();
+		myRigidbody = GetComponentInParent<Rigidbody2D>();
 		myFeet = GetComponent<BoxCollider2D>();
 	}
 

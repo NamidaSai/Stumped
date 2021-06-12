@@ -7,11 +7,11 @@ public class PlayerController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		GetComponent<PlayerMover>().Move(moveInput);
+		GetComponentInChildren<IMover>().Move(moveInput);
 
 		if (moveInput.y > 0.5f)
 		{
-			GetComponent<PlayerMover>().Jump();
+			GetComponentInChildren<IMover>().Jump();
 		}
 	}
 
