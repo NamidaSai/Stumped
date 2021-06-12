@@ -728,7 +728,7 @@ MonoBehaviour:
   maxSpeed: 12
   airSpeed: 5
   bonusGravity: 32
-  jumpSpeed: 3
+  jumpSpeed: 2
 --- !u!61 &1033598603
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -851,7 +851,7 @@ Transform:
   - {fileID: 1033598601}
   - {fileID: 1427898133}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1074543605
 MonoBehaviour:
@@ -991,7 +991,7 @@ Transform:
   m_Children:
   - {fileID: 694712892}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1075222070
 CircleCollider2D:
@@ -1196,10 +1196,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
-  maxSpeed: 30
-  airSpeed: 30
-  bonusGravity: 24
-  jumpSpeed: 10
+  maxSpeed: 20
+  airSpeed: 18
+  bonusGravity: 32
+  jumpSpeed: 14
 --- !u!61 &1427898136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1903,7 +1903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2072811357
 Transform:
   m_ObjectHideFlags: 0
