@@ -733,6 +733,109 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Tethering",
+            "id": "c86b1c35-258f-4654-8e2d-d24e5f3965dc",
+            "actions": [
+                {
+                    "name": "LeftArmControl",
+                    "type": "Button",
+                    "id": "501e0a40-236d-4297-9ec9-08753034f686",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightArmControl",
+                    "type": "Button",
+                    "id": "8d473163-cf05-4c11-820f-59ec3e38bf11",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "LeftGrabToggle",
+                    "type": "Button",
+                    "id": "27feebdc-df61-4962-96bf-8444ab90495f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightGrabToggle",
+                    "type": "Button",
+                    "id": "e3f95d56-448c-48ba-bffc-5debf5be47b7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MoveTether",
+                    "type": "Value",
+                    "id": "6d9eecf9-9e30-412d-819b-ff3a654e1a91",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1cff3ce4-b0ff-4392-853b-4e17921083be",
+                    "path": "<GamePad>/leftTrigger",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "LeftArmControl",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "be3e5aaf-b0e2-4d09-8bf1-1319e58fe029",
+                    "path": "<GamePad>/rightTrigger",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "RightArmControl",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "447a9e14-6d80-4778-96e7-9968165ffb1f",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "LeftGrabToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "90e9cac3-b2d1-445e-accd-0f275fd8cb3f",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "RightGrabToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c25a2826-055c-4272-bd4b-07824e5be819",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "Gamepad",
+                    "action": "MoveTether",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
