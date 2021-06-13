@@ -1996,7 +1996,7 @@ TilemapRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.007936537, y: 0.007936537, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -2011,7 +2011,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8736026479053775998}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2044,20 +2044,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1095907427}
     m_ColliderPaths:
-    - - X: 200000000
-        Y: -100000000
-      - X: 200000000
-        Y: -50000000
-      - X: -170000000
-        Y: -50000000
-      - X: -170000000
-        Y: -100000000
+    - - X: -170079360
+        Y: -49920636
+      - X: -170079360
+        Y: -100079368
+      - X: 200079360
+        Y: -100079368
+      - X: 200079360
+        Y: -49920636
   m_CompositePaths:
     m_Paths:
-    - - {x: 19.999971, y: -10}
-      - {x: 19.999971, y: -5}
-      - {x: -17, y: -5.000029}
-      - {x: -16.999971, y: -10}
+    - - {x: 20.007908, y: -10.0079365}
+      - {x: 20.007908, y: -4.9920635}
+      - {x: -17.007936, y: -4.992093}
+      - {x: -17.007908, y: -10.0079365}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!19719996 &1095907427

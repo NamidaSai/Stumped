@@ -279,6 +279,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0c607f5b-2fb0-48fa-8098-a1293a4340cf",
+                    "path": "<Keyboard>/e",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "RightArmControl",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e8fda7ee-d501-4660-95a7-5ef8bcc7eae4",
                     "path": "<GamePad>/rightTrigger",
                     "interactions": "Press(behavior=2)",
@@ -290,12 +301,34 @@
                 },
                 {
                     "name": "",
+                    "id": "47167377-23d7-4879-88f5-0d6ca5708316",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "LeftGrabToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f249562d-1878-4b49-a638-6306c9a7c5ff",
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "LeftGrabToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9634e2bd-2fde-42da-ae52-aff61bf0b334",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "RightGrabToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -318,6 +351,28 @@
                     "processors": "StickDeadzone",
                     "groups": "Gamepad",
                     "action": "MoveTether",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eba53cd2-d9c3-4691-bd8c-7d0e713a045c",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "MoveTether",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0613447e-8fbf-4559-beb4-3743f3e3407d",
+                    "path": "<Keyboard>/q",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "LeftArmControl",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
