@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.88
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -3.58
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63,9 +63,37 @@ PrefabInstance:
       propertyPath: selfPrefab
       value: 
       objectReference: {fileID: 6394334894273572056}
+    - target: {fileID: 1942122063449504691, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_Radius
+      value: 0.47
+      objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504694, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_Name
       value: BB8 Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 15b7a3a677145204297a8299721e879e, type: 3}
+    - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613369, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.027
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613369, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.062
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}

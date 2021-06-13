@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1689476617
-  m_SortingLayer: 4
+  m_SortingLayerID: 1934946897
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2a4a2fd8f58535e4ea01bf9106e4d36c, type: 3}
   m_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
@@ -150,8 +150,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1689476617
-  m_SortingLayer: 4
+  m_SortingLayerID: 1934946897
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 73d07a33c31ac3b4b8605aa2f9cd6802, type: 3}
   m_Color: {r: 0.21957992, g: 0.4528302, b: 0.23015684, a: 1}
@@ -174,12 +174,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1560124137}
   m_Layer: 6
-  m_Name: Dandelion Sprite
+  m_Name: _OLD Dandelion Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1560124137
 Transform:
   m_ObjectHideFlags: 0
@@ -235,7 +235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.73
+      value: -4.57
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.y
@@ -289,8 +289,55 @@ PrefabInstance:
       propertyPath: m_Name
       value: FLY Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_Size.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_Size.y
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5221a9cd01605ac4693a8ef014e1bfb6, type: 3}
+    - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613369, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.18300009
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613369, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.48099995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613369, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613369, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613369, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
     - {fileID: 1942122063449504691, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
 --- !u!1 &3427902416701770452 stripped
