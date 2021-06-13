@@ -23,6 +23,13 @@ public class Tether : MonoBehaviour
      
     }
     Vector2 CurrentInput;
+    internal void AnchorStartTo(Rigidbody2D rb)
+    {
+        var joint = StartTransform.GetComponent<FixedJoint2D>();
+        joint.connectedBody = rb;
+        joint.enabled = true;
+
+    }
     internal void RecieveMoveInput(Vector2 InputAxis)
     {
 
@@ -77,15 +84,25 @@ public class Tether : MonoBehaviour
     }
     private void Update()
     {
-        
+
+        VisualTether.SetPosition(0, StartTransform.position);
+        VisualTether.SetPosition(1, EndTransform.position);
     }
     private void FixedUpdate()
     {
-        var feedbackForceCoefficient = Mathf.InverseLerp(MinRange, MaxRange, Vector2.Distance(StartTransform.position, EndTransform.position));
-        feedbackForceCoefficient *= feedbackForceCoefficient;
-        EndRB.AddForce(CurrentInput * Speed + (Vector2)(StartTransform.position-EndTransform.position)* Mathf.Clamp01(feedbackForceCoefficient)*PullbackForce);//add math operation for range
-        feedbackForceCoefficient = Mathf.InverseLerp(MinRange+ PullBackDistanceOffset, MaxRange+PullBackDistanceOffset, Vector2.Distance(StartTransform.position, EndTransform.position));
-        StartRB.AddForce((EndTransform.position - StartTransform.position) * feedbackForceCoefficient*PullbackForce);
+        if(!Controlled && !grabbing)
+        {
+            EndTransform.position = Vector2.MoveTowards(EndTransform.position, StartTransform.position, 0.1f);
+        }
+        else
+        {
+            var feedbackForceCoefficient = Mathf.InverseLerp(MinRange, MaxRange, Vector2.Distance(StartTransform.position, EndTransform.position));
+            feedbackForceCoefficient *= feedbackForceCoefficient;
+            EndRB.AddForce(CurrentInput * Speed + (Vector2)(StartTransform.position - EndTransform.position) * Mathf.Clamp01(feedbackForceCoefficient) * PullbackForce);//add math operation for range
+            feedbackForceCoefficient = Mathf.InverseLerp(MinRange + PullBackDistanceOffset, MaxRange + PullBackDistanceOffset, Vector2.Distance(StartTransform.position, EndTransform.position));
+            StartRB.AddForce((EndTransform.position - StartTransform.position) * feedbackForceCoefficient * PullbackForce);
+        }
+        
     }
 
     internal void EnterControlMode()
