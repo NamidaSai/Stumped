@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Sandbox/Sai Sandbox.unity
+    guid: b3ae26d3475f28b45ac957037977a606
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 951397684c0b8c540b2eb6340bd844bc, type: 2}
