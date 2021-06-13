@@ -23,6 +23,13 @@ public class Tether : MonoBehaviour
      
     }
     Vector2 CurrentInput;
+    internal void AnchorStartTo(Rigidbody2D rb)
+    {
+        var joint = StartTransform.GetComponent<FixedJoint2D>();
+        joint.connectedBody = rb;
+        joint.enabled = true;
+
+    }
     internal void RecieveMoveInput(Vector2 InputAxis)
     {
 
@@ -77,7 +84,9 @@ public class Tether : MonoBehaviour
     }
     private void Update()
     {
-        
+
+        VisualTether.SetPosition(0, StartTransform.position);
+        VisualTether.SetPosition(1, EndTransform.position);
     }
     private void FixedUpdate()
     {

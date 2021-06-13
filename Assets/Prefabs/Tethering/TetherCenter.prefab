@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 2275602631112165925}
   - component: {fileID: 2275602631112165927}
   - component: {fileID: 2275602631112165924}
-  - component: {fileID: 2275602631112165931}
-  - component: {fileID: 7740529633361030865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TetherCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,53 +82,6 @@ MonoBehaviour:
   JoinObjectsEnabled: {fileID: 11400000, guid: e8535b6df35d5ec4c91dc8d95b0d6316, type: 2}
   JoinObjectsDisabled: {fileID: 11400000, guid: cdc363893a5784149ac7277ff2175d2b, type: 2}
   ExternalTethersLimit: 2
---- !u!50 &2275602631112165931
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2275602631112165920}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 2
-  m_LinearDrag: 5
-  m_AngularDrag: 0.05
-  m_GravityScale: 3
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &7740529633361030865
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2275602631112165920}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1001 &4459855919208348136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138,9 +89,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2275602631112165925}
     m_Modifications:
+    - target: {fileID: 956414103957175563, guid: 5adcb713eaf390d4c8aedfb452f6b516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2513343061746602114, guid: 5adcb713eaf390d4c8aedfb452f6b516, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318618938517558666, guid: 5adcb713eaf390d4c8aedfb452f6b516, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7639552652303574122, guid: 5adcb713eaf390d4c8aedfb452f6b516, type: 3}
       propertyPath: m_Name
       value: LeftTether
+      objectReference: {fileID: 0}
+    - target: {fileID: 7639552652303574122, guid: 5adcb713eaf390d4c8aedfb452f6b516, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7639552652303574125, guid: 5adcb713eaf390d4c8aedfb452f6b516, type: 3}
       propertyPath: m_RootOrder
@@ -189,7 +156,7 @@ PrefabInstance:
     - target: {fileID: 8665288085425018469, guid: 5adcb713eaf390d4c8aedfb452f6b516, type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 
-      objectReference: {fileID: 2275602631112165931}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5adcb713eaf390d4c8aedfb452f6b516, type: 3}
 --- !u!4 &6332540450379177349 stripped
@@ -263,6 +230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightTether
       objectReference: {fileID: 0}
+    - target: {fileID: 699222992701940444, guid: eb3422e1dc1b3ef44abc2ca56eacda0d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2013195518264774867, guid: eb3422e1dc1b3ef44abc2ca56eacda0d, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0
@@ -270,7 +241,19 @@ PrefabInstance:
     - target: {fileID: 2013195518264774867, guid: eb3422e1dc1b3ef44abc2ca56eacda0d, type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 
-      objectReference: {fileID: 2275602631112165931}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706322087963465268, guid: eb3422e1dc1b3ef44abc2ca56eacda0d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368043938815103804, guid: eb3422e1dc1b3ef44abc2ca56eacda0d, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995255745336589245, guid: eb3422e1dc1b3ef44abc2ca56eacda0d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb3422e1dc1b3ef44abc2ca56eacda0d, type: 3}
 --- !u!4 &6558569276207709666 stripped
