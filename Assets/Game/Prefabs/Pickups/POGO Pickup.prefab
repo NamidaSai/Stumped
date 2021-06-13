@@ -189,8 +189,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518682280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.531, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.527, z: 0}
+  m_LocalScale: {x: 1.1375, y: 1, z: 1}
   m_Children:
   - {fileID: 1210106665}
   - {fileID: 537907370}
@@ -261,7 +261,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.007931232, y: 0.1868937}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -272,7 +272,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.33645344, y: 1.3737874}
   m_EdgeRadius: 0
 --- !u!1001 &917550079767951179
 PrefabInstance:
@@ -344,6 +344,10 @@ PrefabInstance:
     - target: {fileID: 1942122063449504694, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_Name
       value: POGO Pickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122065207613369, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.016
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1942122063449504691, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}

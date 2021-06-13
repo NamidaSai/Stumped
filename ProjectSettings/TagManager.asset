@@ -47,12 +47,12 @@ TagManager:
   - name: Tilemap
     uniqueID: 684395827
     locked: 0
+  - name: Foreground
+    uniqueID: 2507827757
+    locked: 0
   - name: Interactables
     uniqueID: 1934946897
     locked: 0
   - name: Player
     uniqueID: 1689476617
-    locked: 0
-  - name: Foreground
-    uniqueID: 2507827757
     locked: 0
