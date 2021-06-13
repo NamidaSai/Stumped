@@ -8,6 +8,7 @@ public class BasicMover : MonoBehaviour, IMover
 	[SerializeField] float bonusGravity = 9.8f;
 	[SerializeField] float jumpSpeed = 10f;
 	[SerializeField] LayerMask jumpableLayers = default;
+	[SerializeField] GameObject stumpSprite = default;
 
 	private Rigidbody2D myRigidbody;
 	private BoxCollider2D myFeet;
@@ -27,6 +28,10 @@ public class BasicMover : MonoBehaviour, IMover
 	{
 		ApplyBonusGravity();
 		ClampMoveVelocity();
+		if (playerIsTouchingGround || playerIsTouchingObstacle)
+		{
+			GetComponent<Animator>().ResetTrigger("Jump");
+		}
 	}
 
 	private void ApplyBonusGravity()
@@ -70,7 +75,7 @@ public class BasicMover : MonoBehaviour, IMover
 		Vector2 moveForce = new Vector2(currentMoveSpeed, 0f);
 		myRigidbody.AddForce(moveForce);
 
-		// FlipSprite(moveThrottle);
+		FlipSprite(moveThrottle);
 	}
 
 	private void FlipSprite(Vector2 moveThrottle)
@@ -79,7 +84,21 @@ public class BasicMover : MonoBehaviour, IMover
 
 		if (playerHasHorizontalSpeed)
 		{
-			transform.localScale = new Vector3(Mathf.Sign(moveThrottle.x), transform.localScale.y, transform.localScale.z);
+			GetComponent<Animator>().SetBool("isWalking", true);
+			stumpSprite.transform.localScale = new Vector3(Mathf.Sign(moveThrottle.x), stumpSprite.transform.localScale.y, stumpSprite.transform.localScale.z);
+		}
+		else
+		{
+			GetComponent<Animator>().SetBool("isWalking", false);
+		}
+
+		if (moveThrottle.x < 0f)
+		{
+			GetComponent<Animator>().SetBool("isFacingLeft", true);
+		}
+		else
+		{
+			GetComponent<Animator>().SetBool("isFacingLeft", false);
 		}
 	}
 
@@ -87,11 +106,12 @@ public class BasicMover : MonoBehaviour, IMover
 	{
 		if (!playerIsTouchingGround && !playerIsTouchingObstacle) { return; }
 
+		PlayJumpAnimation();
+		PlayJumpSFX();
+
 		float currentJumpSpeed = jumpSpeed * 100f;
 		Vector2 jumpForce = new Vector2(0f, currentJumpSpeed);
 		myRigidbody.AddForce(jumpForce);
-
-		PlayJumpSFX();
 	}
 
 	private void PlayJumpSFX()
@@ -108,5 +128,15 @@ public class BasicMover : MonoBehaviour, IMover
 				audioManager.Play("BASEJump");
 				break;
 		}
+	}
+
+	private void PlayJumpAnimation()
+	{
+		if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+		{
+			GetComponent<Animator>().ResetTrigger("Jump");
+			return;
+		}
+		GetComponent<Animator>().SetTrigger("Jump");
 	}
 }
