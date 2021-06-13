@@ -697,6 +697,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 305738623}
     m_Modifications:
+    - target: {fileID: 4604456255802685773, guid: 801bc5c0fca0aa14f98a4a073110a675, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5343678614057763271, guid: 801bc5c0fca0aa14f98a4a073110a675, type: 3}
       propertyPath: jumpableLayers.m_Bits
       value: 1024
@@ -757,7 +761,16 @@ PrefabInstance:
       propertyPath: jumpableLayers.m_Bits
       value: 1024
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5880408016576940903, guid: 801bc5c0fca0aa14f98a4a073110a675, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943038585085812647, guid: 801bc5c0fca0aa14f98a4a073110a675, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4604456255802685773, guid: 801bc5c0fca0aa14f98a4a073110a675, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 801bc5c0fca0aa14f98a4a073110a675, type: 3}
 --- !u!1001 &8736026479444160321
 PrefabInstance:
