@@ -64,7 +64,7 @@ public class BasicMover : MonoBehaviour, IMover
 		Vector2 moveForce = new Vector2(currentMoveSpeed, 0f);
 		myRigidbody.AddForce(moveForce);
 
-		FlipSprite(moveThrottle);
+		// FlipSprite(moveThrottle);
 	}
 
 	private void FlipSprite(Vector2 moveThrottle)

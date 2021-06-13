@@ -1,7 +1,34 @@
 fileFormatVersion: 2
 guid: ef3781fd36f283b4d8d372b45625fa13
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1300461666582961593
+    second: Swemp_0
+  - first:
+      213: -1857874953828133603
+    second: Swemp_1
+  - first:
+      213: 4966700946477676317
+    second: Swemp_2
+  - first:
+      213: -8390851622943349174
+    second: Swemp_3
+  - first:
+      213: 7746714762490867838
+    second: Swemp_4
+  - first:
+      213: -3552682486854322050
+    second: Swemp_5
+  - first:
+      213: 1899134755355862209
+    second: Swemp_6
+  - first:
+      213: -7048636663474872332
+    second: Swemp_7
+  - first:
+      213: -6024307334913273280
+    second: Swemp_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +68,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 63
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +102,230 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Swemp_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
+      physicsShape:
+      - - {x: -32, y: 32}
+        - {x: -32, y: -32}
+        - {x: 32, y: -32}
+        - {x: 32, y: 32}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7426f4f1105d3fde0800000000000000
+      internalID: -1300461666582961593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swemp_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 130
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d159afba2908736e0800000000000000
+      internalID: -1857874953828133603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swemp_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 130
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17f56432344de440800000000000000
+      internalID: 4966700946477676317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swemp_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 65
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a46a373d7e4bd8b80800000000000000
+      internalID: -8390851622943349174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swemp_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 65
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e70fa8a580cd18b60800000000000000
+      internalID: 7746714762490867838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swemp_5
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 65
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78fb43e91652bec0800000000000000
+      internalID: -3552682486854322050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swemp_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4a5997ff41b5a10800000000000000
+      internalID: 1899134755355862209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swemp_7
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff19c2cc463e2e90800000000000000
+      internalID: -7048636663474872332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swemp_8
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 63
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042d6b4a56c556ca0800000000000000
+      internalID: -6024307334913273280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
