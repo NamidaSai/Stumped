@@ -90,11 +90,19 @@ public class Tether : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        var feedbackForceCoefficient = Mathf.InverseLerp(MinRange, MaxRange, Vector2.Distance(StartTransform.position, EndTransform.position));
-        feedbackForceCoefficient *= feedbackForceCoefficient;
-        EndRB.AddForce(CurrentInput * Speed + (Vector2)(StartTransform.position-EndTransform.position)* Mathf.Clamp01(feedbackForceCoefficient)*PullbackForce);//add math operation for range
-        feedbackForceCoefficient = Mathf.InverseLerp(MinRange+ PullBackDistanceOffset, MaxRange+PullBackDistanceOffset, Vector2.Distance(StartTransform.position, EndTransform.position));
-        StartRB.AddForce((EndTransform.position - StartTransform.position) * feedbackForceCoefficient*PullbackForce);
+        if(!Controlled && !grabbing)
+        {
+            EndTransform.position = Vector2.MoveTowards(EndTransform.position, StartTransform.position, 0.1f);
+        }
+        else
+        {
+            var feedbackForceCoefficient = Mathf.InverseLerp(MinRange, MaxRange, Vector2.Distance(StartTransform.position, EndTransform.position));
+            feedbackForceCoefficient *= feedbackForceCoefficient;
+            EndRB.AddForce(CurrentInput * Speed + (Vector2)(StartTransform.position - EndTransform.position) * Mathf.Clamp01(feedbackForceCoefficient) * PullbackForce);//add math operation for range
+            feedbackForceCoefficient = Mathf.InverseLerp(MinRange + PullBackDistanceOffset, MaxRange + PullBackDistanceOffset, Vector2.Distance(StartTransform.position, EndTransform.position));
+            StartRB.AddForce((EndTransform.position - StartTransform.position) * feedbackForceCoefficient * PullbackForce);
+        }
+        
     }
 
     internal void EnterControlMode()
