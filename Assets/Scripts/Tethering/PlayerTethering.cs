@@ -19,7 +19,10 @@ public class PlayerTethering : MonoBehaviour
 
     private void Start()
     {
+        LeftTether.AnchorStartTo(PlayerRB);
+        RightTether.AnchorStartTo(PlayerRB);
         ChangeState(new InactiveTetherState(this));
+
     }
 
     private void ChangeState(PlayerTetherState newTetherState)
