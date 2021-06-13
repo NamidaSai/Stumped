@@ -22,7 +22,7 @@ public class PlayerTethering : MonoBehaviour
         LeftTether.AnchorStartTo(PlayerRB);
         RightTether.AnchorStartTo(PlayerRB);
         ChangeState(new InactiveTetherState(this));
-
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void ChangeState(PlayerTetherState newTetherState)

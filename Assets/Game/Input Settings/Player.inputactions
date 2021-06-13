@@ -359,7 +359,7 @@
                     "id": "eba53cd2-d9c3-4691-bd8c-7d0e713a045c",
                     "path": "<Pointer>/delta",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "groups": "Keyboard&Mouse",
                     "action": "MoveTether",
                     "isComposite": false,

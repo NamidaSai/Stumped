@@ -1079,7 +1079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5343678615334876897}
   - component: {fileID: 5343678615334876896}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: _OLD Rock Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1243,7 +1243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6227857837544567186}
   - component: {fileID: 6227857837544567189}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Rock Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

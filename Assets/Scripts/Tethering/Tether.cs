@@ -32,7 +32,7 @@ public class Tether : MonoBehaviour
     }
     internal void RecieveMoveInput(Vector2 InputAxis)
     {
-
+        if (InputAxis.x > 1f || InputAxis.y > 1f) InputAxis = InputAxis.normalized;
         CurrentInput = InputAxis;
     }
     bool grabbing = false;

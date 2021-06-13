@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 50
-  MinRange: 3
-  MaxRange: 5
+  MinRange: 5
+  MaxRange: 6
   PullBackDistanceOffset: 2
   PullbackForce: 100
   GrabRange: 1
