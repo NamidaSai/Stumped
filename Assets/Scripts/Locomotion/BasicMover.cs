@@ -7,15 +7,20 @@ public class BasicMover : MonoBehaviour, IMover
 	[SerializeField] float airSpeed = 5f;
 	[SerializeField] float bonusGravity = 9.8f;
 	[SerializeField] float jumpSpeed = 10f;
+	[SerializeField] LayerMask jumpableLayers = default;
 
 	private Rigidbody2D myRigidbody;
 	private BoxCollider2D myFeet;
 	private bool playerIsTouchingGround;
+	private bool playerIsTouchingObstacle;
+
+	private AudioManager audioManager;
 
 	private void Start()
 	{
 		myRigidbody = GetComponentInParent<Rigidbody2D>();
 		myFeet = GetComponent<BoxCollider2D>();
+		audioManager = FindObjectOfType<AudioManager>();
 	}
 
 	private void FixedUpdate()
@@ -37,6 +42,7 @@ public class BasicMover : MonoBehaviour, IMover
 
 	private void ClampMoveVelocity()
 	{
+		playerIsTouchingObstacle = myFeet.IsTouchingLayers(jumpableLayers);
 		if (playerIsTouchingGround)
 		{
 			Vector2 currentVelocity = myRigidbody.velocity;
@@ -51,7 +57,7 @@ public class BasicMover : MonoBehaviour, IMover
 
 		float moveSpeedX;
 
-		if (playerIsTouchingGround)
+		if (playerIsTouchingGround || playerIsTouchingObstacle)
 		{
 			moveSpeedX = moveSpeed * Time.deltaTime * moveThrottle.x;
 		}
@@ -79,10 +85,28 @@ public class BasicMover : MonoBehaviour, IMover
 
 	public void Jump()
 	{
-		if (!playerIsTouchingGround) { return; }
+		if (!playerIsTouchingGround && !playerIsTouchingObstacle) { return; }
 
 		float currentJumpSpeed = jumpSpeed * 100f;
 		Vector2 jumpForce = new Vector2(0f, currentJumpSpeed);
 		myRigidbody.AddForce(jumpForce);
+
+		PlayJumpSFX();
+	}
+
+	private void PlayJumpSFX()
+	{
+		switch (GetComponent<Pickup>().GetState())
+		{
+			case LocomotionState.BB8:
+				audioManager.Play("BB8Jump");
+				break;
+			case LocomotionState.POGO:
+				audioManager.Play("POGOJump");
+				break;
+			case LocomotionState.BASE:
+				audioManager.Play("BASEJump");
+				break;
+		}
 	}
 }
