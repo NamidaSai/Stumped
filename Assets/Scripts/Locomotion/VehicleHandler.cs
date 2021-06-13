@@ -10,9 +10,12 @@ public class VehicleHandler : MonoBehaviour
 	private GameObject currentVehicle = null;
 	private GameObject currentPickup = null;
 
+	private AudioManager audioManager;
+
 	private void Start()
 	{
 		InitVehicle();
+		audioManager = FindObjectOfType<AudioManager>();
 	}
 
 	private void InitVehicle()
@@ -77,7 +80,27 @@ public class VehicleHandler : MonoBehaviour
 	{
 		currentPickup = pickup;
 		SwitchState(currentPickup.GetComponent<Pickup>().GetState());
+		PlayStateFX(currentPickup.GetComponent<Pickup>().GetState());
 		currentPickup.SetActive(false);
+	}
+
+	private void PlayStateFX(LocomotionState state)
+	{
+		switch (state)
+		{
+			case LocomotionState.BB8:
+				audioManager.Play("BB8Pickup");
+				break;
+			case LocomotionState.POGO:
+				audioManager.Play("POGOPickup");
+				break;
+			case LocomotionState.FLY:
+				audioManager.Play("FLYPickup");
+				break;
+			default:
+				audioManager.Play("BASEPickup");
+				break;
+		}
 	}
 
 	private GameObject GetClosestPickup()

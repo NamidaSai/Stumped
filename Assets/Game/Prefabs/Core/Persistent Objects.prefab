@@ -46,7 +46,7 @@ MonoBehaviour:
   sounds:
   - name: ambient
     clip: {fileID: 8300000, guid: 85c73461517554a459fefff4c57f0d97, type: 3}
-    volume: 0.85
+    volume: 0.95
     pitch: 1
     randomPitch: 0
     loop: 1
@@ -55,6 +55,62 @@ MonoBehaviour:
   - name: click
     clip: {fileID: 8300000, guid: 4e43453a965ecff479f818d51f902866, type: 3}
     volume: 0.1
+    pitch: 1
+    randomPitch: 1
+    loop: 0
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: BB8Pickup
+    clip: {fileID: 8300000, guid: 97c1189d863d4a04ea934de681db1bd0, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomPitch: 1
+    loop: 0
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: POGOPickup
+    clip: {fileID: 8300000, guid: e97c4cf9ebdd0a9418c8e107205ebf2b, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomPitch: 1
+    loop: 0
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: FLYPickup
+    clip: {fileID: 8300000, guid: 14225abdbb69b38438200b028ccc04ae, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomPitch: 1
+    loop: 0
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: BASEPickup
+    clip: {fileID: 8300000, guid: 861f0ff1ae7a1f94a9f2bc40faeec19f, type: 3}
+    volume: 1
+    pitch: 1
+    randomPitch: 1
+    loop: 0
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: BB8Jump
+    clip: {fileID: 8300000, guid: a4218aac5bcede444a94f5fce8b14242, type: 3}
+    volume: 0.3
+    pitch: 1
+    randomPitch: 1
+    loop: 0
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: POGOJump
+    clip: {fileID: 8300000, guid: f381a588a51cf1f48905a89e07c5514d, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomPitch: 1
+    loop: 0
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: BASEJump
+    clip: {fileID: 8300000, guid: 997e7e043d07b5f4eac76970d54a37d4, type: 3}
+    volume: 0.05
     pitch: 1
     randomPitch: 1
     loop: 0
@@ -150,8 +206,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracks:
   - name: intro
-    clip: {fileID: 8300000, guid: bf19e44a117071d408c4ac6e6fdb2033, type: 3}
-    volume: 0.25
+    clip: {fileID: 8300000, guid: 89ea06baf00fd934b9751678f1c3c7a9, type: 3}
+    volume: 0.15
     pitch: 1
     randomPitch: 0
     loop: 1
