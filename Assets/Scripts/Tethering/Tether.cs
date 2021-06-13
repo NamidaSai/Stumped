@@ -15,6 +15,8 @@ public class Tether : MonoBehaviour
     [SerializeField] Transform StartTransform;
     [SerializeField] Rigidbody2D EndRB;
     [SerializeField] Transform EndTransform;
+    [Header("Visuals and feedback")]
+    [SerializeField] LineRenderer VisualTether;
     private void Start()
     {
         UnityEngine.Assertions.Assert.IsTrue(MinRange < MaxRange, "minimum tether range can't be larger that maximum one");
@@ -72,6 +74,10 @@ public class Tether : MonoBehaviour
         }
 
       
+    }
+    private void Update()
+    {
+        
     }
     private void FixedUpdate()
     {
