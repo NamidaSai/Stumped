@@ -92,7 +92,7 @@ public class Tether : MonoBehaviour
     {
         if(!Controlled && !grabbing)
         {
-            EndTransform.position = Vector2.MoveTowards(EndTransform.position, StartTransform.position, 0.1f);
+            EndRB.position = StartRB.position;
         }
         else
         {

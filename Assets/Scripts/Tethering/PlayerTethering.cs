@@ -19,7 +19,7 @@ public class PlayerTethering : MonoBehaviour
 
     private void Start()
     {
-        LeftTether.AnchorStartTo(PlayerRB);
+        LeftTether?.AnchorStartTo(PlayerRB);
         RightTether.AnchorStartTo(PlayerRB);
         ChangeState(new InactiveTetherState(this));
         Cursor.lockState = CursorLockMode.Locked;
@@ -71,11 +71,11 @@ public class PlayerTethering : MonoBehaviour
         internal abstract void HandleStickInput(Vector2 value);
         internal virtual void HandleGrabLeftToggle()
         {
-            Parent.LeftTether.ToggleGrab();
+            Parent.LeftTether?.ToggleGrab();
         }
         internal virtual void HandleGrabRightToggle()
         {
-            Parent.RightTether.ToggleGrab();
+            Parent.RightTether?.ToggleGrab();
         }
     }
     protected class LeftTetherActiveState : PlayerTetherState
@@ -86,12 +86,12 @@ public class PlayerTethering : MonoBehaviour
 
         internal override void Enter()
         {
-            Parent.LeftTether.EnterControlMode();
+            Parent.LeftTether?.EnterControlMode();
         }
 
         internal override void Exit()
         {
-            Parent.LeftTether.ExitControlMode();
+            Parent.LeftTether?.ExitControlMode();
         }
         internal override void HandleControlLeft(bool isButtonDown)
         {
@@ -113,7 +113,7 @@ public class PlayerTethering : MonoBehaviour
 
         internal override void HandleStickInput(Vector2 value)
         {
-            Parent.LeftTether.RecieveMoveInput(value);
+            Parent.LeftTether?.RecieveMoveInput(value);
         }
     }
     protected class RightTetherActiveState : PlayerTetherState
@@ -124,12 +124,12 @@ public class PlayerTethering : MonoBehaviour
 
         internal override void Enter()
         {
-            Parent.RightTether.EnterControlMode();
+            Parent.RightTether?.EnterControlMode();
         }
 
         internal override void Exit()
         {
-            Parent.RightTether.ExitControlMode();
+            Parent.RightTether?.ExitControlMode();
         }
 
         
