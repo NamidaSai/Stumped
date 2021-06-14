@@ -116,6 +116,14 @@ MonoBehaviour:
     loop: 0
     stopOnPause: 0
     source: {fileID: 0}
+  - name: FLYJump
+    clip: {fileID: 8300000, guid: 92eb3f45a3fe53b4886ca3c68bc9379a, type: 3}
+    volume: 1
+    pitch: 1
+    randomPitch: 0
+    loop: 1
+    stopOnPause: 0
+    source: {fileID: 0}
 --- !u!1 &2310268206789386688
 GameObject:
   m_ObjectHideFlags: 0

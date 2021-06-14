@@ -7,6 +7,7 @@ public class VehicleHandler : MonoBehaviour
 	[SerializeField] Vector2 dropOffset = default;
 	[SerializeField] LayerMask pickupLayer = default;
 	[SerializeField] GameObject[] allVehicles = default;
+	[SerializeField] Sprite flyDiscardSprite = default;
 	private GameObject currentVehicle = null;
 	private GameObject currentPickup = null;
 
@@ -58,6 +59,11 @@ public class VehicleHandler : MonoBehaviour
 	{
 		if (currentPickup == null) { return; }
 		currentPickup.SetActive(true);
+
+		if (currentPickup.GetComponent<Pickup>().GetState() == LocomotionState.FLY)
+		{
+			currentPickup.GetComponentInChildren<SpriteRenderer>().sprite = flyDiscardSprite;
+		}
 
 		if (currentPickup.GetComponent<Pickup>().isOneTimeOnly)
 		{

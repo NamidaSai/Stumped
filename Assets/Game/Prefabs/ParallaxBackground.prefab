@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followsVertical: 0
   cam: {fileID: 0}
-  parallaxEffect: -0.1
+  parallaxEffect: 0
 --- !u!1 &295121240900640739
 GameObject:
   m_ObjectHideFlags: 0

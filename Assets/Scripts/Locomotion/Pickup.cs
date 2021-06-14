@@ -10,10 +10,12 @@ public class Pickup : MonoBehaviour
 	[SerializeField] public bool isOneTimeOnly = false;
 
 	private Vector2 startPosition;
+	private Sprite originalSprite;
 
 	private void Start()
 	{
 		startPosition = transform.position;
+		originalSprite = GetComponentInChildren<SpriteRenderer>().sprite;
 	}
 
 	public bool isUsed = false;
@@ -31,6 +33,7 @@ public class Pickup : MonoBehaviour
 		{
 			GameObject newPickup = Instantiate(selfPrefab, startPosition, Quaternion.identity);
 			newPickup.GetComponent<Pickup>().isUsed = false;
+			newPickup.GetComponentInChildren<SpriteRenderer>().sprite = originalSprite;
 		}
 
 		VanishFX();

@@ -14,6 +14,10 @@ public class FlyMover : MonoBehaviour, IMover
 	[SerializeField] float antiGravity = 9.8f;
 	[SerializeField] float jumpSpeed = 1f;
 	[SerializeField] GameObject stumpSprite = default;
+	[SerializeField] SpriteRenderer flyRenderer = default;
+	[SerializeField] Sprite flyStartSprite = default;
+	[SerializeField] Sprite flyHalfSprite = default;
+	[SerializeField] Sprite flyEndSprite = default;
 
 	private float currentTimer = 0f;
 	private float currentAntiGravity = 0f;
@@ -31,6 +35,11 @@ public class FlyMover : MonoBehaviour, IMover
 		myRigidbody = GetComponentInParent<Rigidbody2D>();
 		myFeet = GetComponent<BoxCollider2D>();
 		audioManager = FindObjectOfType<AudioManager>();
+	}
+
+	private void OnEnable()
+	{
+		flyRenderer.GetComponent<SpriteRenderer>().sprite = flyStartSprite;
 	}
 
 	private void Update()
@@ -131,6 +140,7 @@ public class FlyMover : MonoBehaviour, IMover
 		if (currentTimer <= 0f && flightStarted)
 		{
 			StartCoroutine(FlyFade());
+			flyRenderer.sprite = flyHalfSprite;
 			return;
 		}
 
@@ -150,6 +160,7 @@ public class FlyMover : MonoBehaviour, IMover
 	{
 		yield return new WaitForSeconds(fadeDelay);
 		GetComponentInParent<VehicleHandler>().DropVehicle();
+		flyRenderer.sprite = flyEndSprite;
 		flightStarted = false;
 	}
 
