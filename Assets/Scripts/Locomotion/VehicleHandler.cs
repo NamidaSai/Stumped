@@ -63,6 +63,7 @@ public class VehicleHandler : MonoBehaviour
 		if (currentPickup.GetComponent<Pickup>().GetState() == LocomotionState.FLY)
 		{
 			currentPickup.GetComponentInChildren<SpriteRenderer>().sprite = flyDiscardSprite;
+			audioManager.Stop("FLYJump");
 		}
 
 		if (currentPickup.GetComponent<Pickup>().isOneTimeOnly)

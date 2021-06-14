@@ -403,7 +403,8 @@ MonoBehaviour:
   maxSpeed: 14
   airSpeed: 5
   bonusGravity: 32
-  jumpSpeed: 2
+  jumpSpeed: 7
+  jumpCooldown: 0.7
   jumpableLayers:
     serializedVersion: 2
     m_Bits: 1024
@@ -696,7 +697,8 @@ MonoBehaviour:
   maxSpeed: 20
   airSpeed: 18
   bonusGravity: 32
-  jumpSpeed: 14
+  jumpSpeed: 35
+  jumpCooldown: 0.5
   jumpableLayers:
     serializedVersion: 2
     m_Bits: 1024
@@ -831,7 +833,8 @@ MonoBehaviour:
   maxSpeed: 1.5
   airSpeed: 5
   bonusGravity: 32
-  jumpSpeed: 4
+  jumpSpeed: 10
+  jumpCooldown: 0.2
   jumpableLayers:
     serializedVersion: 2
     m_Bits: 1024

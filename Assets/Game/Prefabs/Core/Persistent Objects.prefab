@@ -118,10 +118,18 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: FLYJump
     clip: {fileID: 8300000, guid: 92eb3f45a3fe53b4886ca3c68bc9379a, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     randomPitch: 0
     loop: 1
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: BaseCollision
+    clip: {fileID: 8300000, guid: 9ac180ef94e448240ad1ee7da1e7e95f, type: 3}
+    volume: 0.015
+    pitch: 1
+    randomPitch: 1
+    loop: 0
     stopOnPause: 0
     source: {fileID: 0}
 --- !u!1 &2310268206789386688
@@ -215,7 +223,7 @@ MonoBehaviour:
   tracks:
   - name: intro
     clip: {fileID: 8300000, guid: 89ea06baf00fd934b9751678f1c3c7a9, type: 3}
-    volume: 0.15
+    volume: 0.1
     pitch: 1
     randomPitch: 0
     loop: 1

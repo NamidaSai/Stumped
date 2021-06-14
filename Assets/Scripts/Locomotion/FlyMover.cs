@@ -165,12 +165,14 @@ public class FlyMover : MonoBehaviour, IMover
 		yield return new WaitForSeconds(fadeAffordance);
 
 		GetComponentInParent<VehicleHandler>().DropVehicle();
+		audioManager.Stop("FLYJump");
 		flightStarted = false;
 	}
 
 	private void PlayJumpSFX()
 	{
 		audioManager.Play("FLYJump");
+		audioManager.Play("BASEJump");
 	}
 
 	private void PlayJumpAnimation()
