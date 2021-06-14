@@ -580,6 +580,7 @@ MonoBehaviour:
   - {fileID: 5343678614057763269}
   - {fileID: 5343678614720432217}
   - {fileID: 6986785489008546937}
+  flyDiscardSprite: {fileID: 0}
 --- !u!50 &5343678614537014453
 Rigidbody2D:
   serializedVersion: 4
@@ -1341,6 +1342,7 @@ MonoBehaviour:
   lifetime: 3
   settleGravity: 9
   fadeDelay: 4
+  fadeAffordance: 1
   moveSpeed: 12
   maxSpeedMove: 1.5
   maxSpeedFlight: 4
@@ -1348,6 +1350,10 @@ MonoBehaviour:
   antiGravity: 13
   jumpSpeed: 1
   stumpSprite: {fileID: 6986785487422010948}
+  flyRenderer: {fileID: 0}
+  flyStartSprite: {fileID: 0}
+  flyHalfSprite: {fileID: 0}
+  flyEndSprite: {fileID: 0}
 --- !u!95 &1510242520
 Animator:
   serializedVersion: 3

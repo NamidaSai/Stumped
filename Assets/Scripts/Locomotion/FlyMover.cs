@@ -7,6 +7,7 @@ public class FlyMover : MonoBehaviour, IMover
 	[SerializeField] float lifetime = 5f;
 	[SerializeField] float settleGravity = 9.8f;
 	[SerializeField] float fadeDelay = 4f;
+	[SerializeField] float fadeAffordance = 1f;
 	[SerializeField] float moveSpeed = 12f;
 	[SerializeField] float maxSpeedMove = 1.5f;
 	[SerializeField] float maxSpeedFlight = 24f;
@@ -158,9 +159,12 @@ public class FlyMover : MonoBehaviour, IMover
 
 	private IEnumerator FlyFade()
 	{
-		yield return new WaitForSeconds(fadeDelay);
-		GetComponentInParent<VehicleHandler>().DropVehicle();
+		yield return new WaitForSeconds(fadeDelay - fadeAffordance);
+
 		flyRenderer.sprite = flyEndSprite;
+		yield return new WaitForSeconds(fadeAffordance);
+
+		GetComponentInParent<VehicleHandler>().DropVehicle();
 		flightStarted = false;
 	}
 
