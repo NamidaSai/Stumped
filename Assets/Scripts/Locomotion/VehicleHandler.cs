@@ -56,6 +56,7 @@ public class VehicleHandler : MonoBehaviour
 
 	public void DropVehicle()
 	{
+		if (currentPickup == null) { return; }
 		currentPickup.SetActive(true);
 
 		if (currentPickup.GetComponent<Pickup>().isOneTimeOnly)
@@ -144,6 +145,10 @@ public class VehicleHandler : MonoBehaviour
 
 	private void SetActiveVehicle()
 	{
+		Animator vehicleAnimator = currentVehicle.GetComponent<Animator>();
+		vehicleAnimator.Rebind();
+		vehicleAnimator.Update(0f);
+
 		currentVehicle.SetActive(false);
 
 		foreach (GameObject vehicle in allVehicles)
