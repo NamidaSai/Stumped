@@ -7,7 +7,6 @@ public class Pickup : MonoBehaviour
 	[SerializeField] GameObject selfPrefab = default;
 	[SerializeField] float respawnDelay = 3f;
 	[SerializeField] LocomotionState state;
-	[SerializeField] public bool isOneTimeOnly = false;
 
 	private Vector2 startPosition;
 	private Sprite originalSprite;

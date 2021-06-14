@@ -32,10 +32,11 @@ public class BasicMover : MonoBehaviour, IMover
 	{
 		ApplyBonusGravity();
 		ClampMoveVelocity();
-		// if (playerIsTouchingGround || playerIsTouchingObstacle)
-		// {
-		// 	GetComponent<Animator>().ResetTrigger("Jump");
-		// }
+	}
+
+	private void OnEnable()
+	{
+		canJump = true;
 	}
 
 	private void ApplyBonusGravity()
@@ -131,6 +132,7 @@ public class BasicMover : MonoBehaviour, IMover
 
 	private void PlayJumpSFX()
 	{
+		audioManager.Play("JumpGrunt");
 		switch (GetComponent<Pickup>().GetState())
 		{
 			case LocomotionState.BB8:

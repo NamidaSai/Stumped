@@ -102,15 +102,15 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: POGOJump
     clip: {fileID: 8300000, guid: f381a588a51cf1f48905a89e07c5514d, type: 3}
-    volume: 0.5
+    volume: 0.2
     pitch: 1
     randomPitch: 1
     loop: 0
     stopOnPause: 0
     source: {fileID: 0}
   - name: BASEJump
-    clip: {fileID: 8300000, guid: 997e7e043d07b5f4eac76970d54a37d4, type: 3}
-    volume: 0.05
+    clip: {fileID: 8300000, guid: 9ac180ef94e448240ad1ee7da1e7e95f, type: 3}
+    volume: 0.04
     pitch: 1
     randomPitch: 1
     loop: 0
@@ -126,9 +126,17 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BaseCollision
     clip: {fileID: 8300000, guid: 9ac180ef94e448240ad1ee7da1e7e95f, type: 3}
-    volume: 0.015
+    volume: 0.02
     pitch: 1
     randomPitch: 1
+    loop: 0
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: JumpGrunt
+    clip: {fileID: 8300000, guid: 7bd3d728f00a96e4a8814f4c328dc0cd, type: 3}
+    volume: 0.2
+    pitch: 1
+    randomPitch: 0
     loop: 0
     stopOnPause: 0
     source: {fileID: 0}

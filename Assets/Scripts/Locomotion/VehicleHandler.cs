@@ -7,9 +7,8 @@ public class VehicleHandler : MonoBehaviour
 	[SerializeField] Vector2 dropOffset = default;
 	[SerializeField] LayerMask pickupLayer = default;
 	[SerializeField] GameObject[] allVehicles = default;
-	[SerializeField] Sprite flyDiscardSprite = default;
 	private GameObject currentVehicle = null;
-	private GameObject currentPickup = null;
+	[HideInInspector] public GameObject currentPickup = null;
 
 	private AudioManager audioManager;
 
@@ -62,13 +61,7 @@ public class VehicleHandler : MonoBehaviour
 
 		if (currentPickup.GetComponent<Pickup>().GetState() == LocomotionState.FLY)
 		{
-			currentPickup.GetComponentInChildren<SpriteRenderer>().sprite = flyDiscardSprite;
-			audioManager.Stop("FLYJump");
-		}
-
-		if (currentPickup.GetComponent<Pickup>().isOneTimeOnly)
-		{
-			currentPickup.GetComponent<Pickup>().isUsed = true;
+			GetComponentInChildren<FlyMover>().StopFlight();
 			StartCoroutine(currentPickup.GetComponent<Pickup>().Respawn());
 		}
 

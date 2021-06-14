@@ -19,6 +19,7 @@ public class FlyMover : MonoBehaviour, IMover
 	[SerializeField] Sprite flyStartSprite = default;
 	[SerializeField] Sprite flyHalfSprite = default;
 	[SerializeField] Sprite flyEndSprite = default;
+	[SerializeField] public Sprite flyDiscardSprite = default;
 
 	private float currentTimer = 0f;
 	private float currentAntiGravity = 0f;
@@ -126,6 +127,7 @@ public class FlyMover : MonoBehaviour, IMover
 
 		PlayJumpAnimation();
 		PlayJumpSFX();
+		GetComponentInParent<VehicleHandler>().currentPickup.GetComponent<Pickup>().isUsed = true;
 
 		flightStarted = true;
 		currentTimer = lifetime;
@@ -165,6 +167,11 @@ public class FlyMover : MonoBehaviour, IMover
 		yield return new WaitForSeconds(fadeAffordance);
 
 		GetComponentInParent<VehicleHandler>().DropVehicle();
+	}
+
+	public void StopFlight()
+	{
+		GetComponentInParent<VehicleHandler>().currentPickup.GetComponentInChildren<SpriteRenderer>().sprite = flyDiscardSprite;
 		audioManager.Stop("FLYJump");
 		flightStarted = false;
 	}
@@ -172,7 +179,6 @@ public class FlyMover : MonoBehaviour, IMover
 	private void PlayJumpSFX()
 	{
 		audioManager.Play("FLYJump");
-		audioManager.Play("BASEJump");
 	}
 
 	private void PlayJumpAnimation()

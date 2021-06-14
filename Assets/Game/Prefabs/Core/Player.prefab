@@ -424,7 +424,6 @@ MonoBehaviour:
   selfPrefab: {fileID: 0}
   respawnDelay: 3
   state: 1
-  isOneTimeOnly: 0
   isUsed: 0
 --- !u!95 &749559019
 Animator:
@@ -581,7 +580,7 @@ MonoBehaviour:
   - {fileID: 5343678614057763269}
   - {fileID: 5343678614720432217}
   - {fileID: 6986785489008546937}
-  flyDiscardSprite: {fileID: 0}
+  currentPickup: {fileID: 0}
 --- !u!50 &5343678614537014453
 Rigidbody2D:
   serializedVersion: 4
@@ -718,7 +717,6 @@ MonoBehaviour:
   selfPrefab: {fileID: 0}
   respawnDelay: 3
   state: 2
-  isOneTimeOnly: 0
   isUsed: 0
 --- !u!95 &1256601303
 Animator:
@@ -854,7 +852,6 @@ MonoBehaviour:
   selfPrefab: {fileID: 0}
   respawnDelay: 3
   state: 0
-  isOneTimeOnly: 0
   isUsed: 0
 --- !u!95 &72553172
 Animator:
@@ -1328,7 +1325,6 @@ MonoBehaviour:
   selfPrefab: {fileID: 0}
   respawnDelay: 3
   state: 3
-  isOneTimeOnly: 0
   isUsed: 0
 --- !u!114 &6986785489008546884
 MonoBehaviour:
@@ -1357,6 +1353,7 @@ MonoBehaviour:
   flyStartSprite: {fileID: 0}
   flyHalfSprite: {fileID: 0}
   flyEndSprite: {fileID: 0}
+  flyDiscardSprite: {fileID: 0}
 --- !u!95 &1510242520
 Animator:
   serializedVersion: 3
