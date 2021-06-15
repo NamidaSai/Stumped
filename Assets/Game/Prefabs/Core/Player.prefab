@@ -622,7 +622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5343678614720432216
 Transform:
   m_ObjectHideFlags: 0
@@ -751,13 +751,14 @@ GameObject:
   - component: {fileID: 5343678615233241135}
   - component: {fileID: 5343678615233241106}
   - component: {fileID: 72553172}
+  - component: {fileID: 478166204}
   m_Layer: 6
   m_Name: BASE VEHICLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5343678615233241104
 Transform:
   m_ObjectHideFlags: 0
@@ -802,7 +803,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.34618205}
+  m_Offset: {x: -0.018603802, y: -0.34618205}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -813,7 +814,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.31}
+  m_Size: {x: 0.64880085, y: 0.31000006}
   m_EdgeRadius: 0
 --- !u!114 &5343678615233241135
 MonoBehaviour:
@@ -828,11 +829,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 12
-  maxSpeed: 1.5
-  airSpeed: 5
+  maxSpeed: 2
+  airSpeed: 8
   bonusGravity: 32
-  jumpSpeed: 10
-  jumpCooldown: 0.2
+  jumpSpeed: 18
+  jumpCooldown: 0.5
   jumpableLayers:
     serializedVersion: 2
     m_Bits: 1024
@@ -872,6 +873,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &478166204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5343678615233241105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf508d923276de54e8dc769ab55c2591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: BaseCollision
 --- !u!1 &6227857836742594083
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +911,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6227857836742594083}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.18300009, y: 0.37, z: 0}
+  m_LocalPosition: {x: 0.1830001, y: 0.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6986785487852153904}
@@ -1107,7 +1121,7 @@ SpriteRenderer:
   m_SortingLayerID: 1689476617
   m_SortingLayer: 5
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: f556ca63cb6b0344c97d016848933b78, type: 3}
+  m_Sprite: {fileID: 6701513666153667480, guid: d393a247f9cfa904296ca11cae71ba12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1246,6 +1260,7 @@ GameObject:
   - component: {fileID: 6986785489008546939}
   - component: {fileID: 6986785489008546884}
   - component: {fileID: 1510242520}
+  - component: {fileID: 1510242521}
   m_Layer: 6
   m_Name: FLY VEHICLE
   m_TagString: Untagged
@@ -1349,11 +1364,11 @@ MonoBehaviour:
   antiGravity: 13
   jumpSpeed: 1
   stumpSprite: {fileID: 6986785487422010948}
-  flyRenderer: {fileID: 0}
-  flyStartSprite: {fileID: 0}
-  flyHalfSprite: {fileID: 0}
-  flyEndSprite: {fileID: 0}
-  flyDiscardSprite: {fileID: 0}
+  flyRenderer: {fileID: 6227857836742594085}
+  flyStartSprite: {fileID: 21300000, guid: 5221a9cd01605ac4693a8ef014e1bfb6, type: 3}
+  flyHalfSprite: {fileID: 21300000, guid: 186a8264079141e4d80f95526916fab0, type: 3}
+  flyEndSprite: {fileID: 21300000, guid: a91c0759cce95c840865d29893b92244, type: 3}
+  flyDiscardSprite: {fileID: 21300000, guid: 02cbb3642beceb1479967eaa8d13b960, type: 3}
 --- !u!95 &1510242520
 Animator:
   serializedVersion: 3
@@ -1373,6 +1388,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1510242521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6986785489008546937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf508d923276de54e8dc769ab55c2591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundName: BaseCollision
 --- !u!1001 &6615164981227961723
 PrefabInstance:
   m_ObjectHideFlags: 0

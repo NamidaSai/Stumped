@@ -62,7 +62,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BB8Pickup
     clip: {fileID: 8300000, guid: 97c1189d863d4a04ea934de681db1bd0, type: 3}
-    volume: 0.5
+    volume: 0.35
     pitch: 1
     randomPitch: 1
     loop: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: POGOPickup
     clip: {fileID: 8300000, guid: e97c4cf9ebdd0a9418c8e107205ebf2b, type: 3}
-    volume: 0.5
+    volume: 0.35
     pitch: 1
     randomPitch: 1
     loop: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: FLYPickup
     clip: {fileID: 8300000, guid: 14225abdbb69b38438200b028ccc04ae, type: 3}
-    volume: 0.5
+    volume: 0.35
     pitch: 1
     randomPitch: 1
     loop: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
   tracks:
   - name: intro
     clip: {fileID: 8300000, guid: 89ea06baf00fd934b9751678f1c3c7a9, type: 3}
-    volume: 0.1
+    volume: 0.07
     pitch: 1
     randomPitch: 0
     loop: 1
