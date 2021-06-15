@@ -295,11 +295,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.2118573
+      value: -7.86
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.476472
+      value: -4.16
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.z
@@ -311,15 +311,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -341,9 +341,17 @@ PrefabInstance:
       propertyPath: selfPrefab
       value: 
       objectReference: {fileID: 1605541332005686525}
+    - target: {fileID: 1942122063449504690, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: offsetDrop.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122063449504690, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: offsetDrop.y
+      value: -1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504694, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_Name
-      value: POGO Pickup
+      value: POGO Pickup (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1942122065207613369, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.y

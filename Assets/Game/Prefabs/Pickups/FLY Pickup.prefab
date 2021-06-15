@@ -251,15 +251,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -282,7 +282,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3427902416701770452}
     - target: {fileID: 1942122063449504690, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: offsetDrop.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122063449504690, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: offsetDrop.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122063449504690, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: isOneTimeOnly
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122063449504690, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: hasRandomRotationDrop
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504694, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}

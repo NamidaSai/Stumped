@@ -7,6 +7,8 @@ public class Pickup : MonoBehaviour
 	[SerializeField] GameObject selfPrefab = default;
 	[SerializeField] float respawnDelay = 3f;
 	[SerializeField] LocomotionState state;
+	[SerializeField] public Vector2 offsetDrop = default;
+	[SerializeField] public bool hasRandomRotationDrop = false;
 
 	private Vector2 startPosition;
 	private Sprite originalSprite;

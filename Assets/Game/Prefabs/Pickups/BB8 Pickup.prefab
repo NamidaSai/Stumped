@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.88
+      value: -16.56
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.58
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37,15 +37,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504688, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -63,13 +63,21 @@ PrefabInstance:
       propertyPath: selfPrefab
       value: 
       objectReference: {fileID: 6394334894273572056}
+    - target: {fileID: 1942122063449504690, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: offsetDrop.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942122063449504690, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
+      propertyPath: offsetDrop.y
+      value: -1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504691, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_Radius
       value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 1942122063449504694, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_Name
-      value: BB8 Pickup
+      value: BB8 Pickup (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1942122065207613368, guid: 4e64fa7397cf7424f8af78b5885ce777, type: 3}
       propertyPath: m_Sprite

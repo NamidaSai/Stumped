@@ -4,7 +4,6 @@ public class VehicleHandler : MonoBehaviour
 {
 	[SerializeField] LocomotionState currentState = LocomotionState.BASE; //serialized for debugging only
 	[SerializeField] float pickupRadius = 3f;
-	[SerializeField] Vector2 dropOffset = default;
 	[SerializeField] LayerMask pickupLayer = default;
 	[SerializeField] GameObject[] allVehicles = default;
 	private GameObject currentVehicle = null;
@@ -67,19 +66,34 @@ public class VehicleHandler : MonoBehaviour
 
 		SwitchState(LocomotionState.BASE);
 
-		Vector2 targetPosition = (Vector2)transform.position + dropOffset;
-		float targetRotation = Random.Range(-180f, 180f);
-		currentPickup.transform.position = targetPosition;
-		currentPickup.transform.eulerAngles = new Vector3(currentPickup.transform.eulerAngles.x,
-    							currentPickup.transform.eulerAngles.y,
-    							currentPickup.transform.eulerAngles.z + targetRotation);
+		SetOffsetPosition();
+
+
+		if (currentPickup.GetComponent<Pickup>().hasRandomRotationDrop)
+		{
+			float targetRotation = Random.Range(-180f, 180f);
+			currentPickup.transform.eulerAngles = new Vector3(currentPickup.transform.eulerAngles.x,
+								    currentPickup.transform.eulerAngles.y,
+								    currentPickup.transform.eulerAngles.z + targetRotation);
+		}
+		else
+		{
+			currentPickup.transform.rotation = Quaternion.identity;
+		}
 
 		currentPickup = null;
+	}
+
+	private void SetOffsetPosition()
+	{
+		Vector2 targetPosition = (Vector2)transform.position + currentPickup.GetComponent<Pickup>().offsetDrop;
+		currentPickup.transform.position = targetPosition;
 	}
 
 	private void PickupVehicle(GameObject pickup)
 	{
 		currentPickup = pickup;
+		transform.position = (Vector2)transform.position - currentPickup.GetComponent<Pickup>().offsetDrop;
 		SwitchState(currentPickup.GetComponent<Pickup>().GetState());
 		PlayStateFX(currentPickup.GetComponent<Pickup>().GetState());
 		currentPickup.SetActive(false);
