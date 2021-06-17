@@ -14,8 +14,10 @@ public class PlayerTethering : MonoBehaviour
 	[SerializeField] SOEvent JoinObjectsEnabled;// invoked when the two tethers are active, to enable linking them
 	[SerializeField] SOEvent JoinObjectsDisabled;//invoked when a tethered is freed
 
-	List<Tether> ExternalTethers;//active tethers between other objects
-				     // [SerializeField]int ExternalTethersLimit = 2;//how many pair of objects can the player attach together
+	// List<Tether> ExternalTethers;//active tethers between other objects
+	// [SerializeField]int ExternalTethersLimit = 2;//how many pair of objects can the player attach together
+
+	public bool canTether = false;
 
 	private void Start()
 	{
@@ -34,25 +36,35 @@ public class PlayerTethering : MonoBehaviour
 
 	private void OnRightArmControl(UnityEngine.InputSystem.InputValue value)
 	{
+		if (!canTether)
+		{
+			GetComponent<VehicleHandler>().TryPickup();
+			return;
+		}
+
 		RightTetherTriggerPressed = value.isPressed;
 
 		currentState.HandleControlRight(value.isPressed);
 	}
 	private void OnLeftArmControl(InputValue value)
 	{
+		if (!canTether) { return; }
 		LeftTetherTriggerPressed = value.isPressed;
 		currentState.HandleControlLeft(value.isPressed);
 	}
 	private void OnRightGrabToggle(InputValue value)
 	{
-		if (value.isPressed) currentState.HandleGrabRightToggle();
+		if (!canTether) { return; }
+		// if (value.isPressed) currentState.HandleGrabRightToggle();
 	}
 	private void OnLeftGrabToggle(InputValue value)
 	{
-		if (value.isPressed) currentState.HandleGrabLeftToggle();
+		if (!canTether) { return; }
+		// if (value.isPressed) currentState.HandleGrabLeftToggle();
 	}
 	private void OnMoveTether(InputValue value)
 	{
+		if (!canTether) { return; }
 		var axis = value.Get<Vector2>();
 		currentState.HandleStickInput(axis);
 	}
@@ -144,6 +156,7 @@ public class PlayerTethering : MonoBehaviour
 			{
 				if (Parent.LeftTetherTriggerPressed) Parent.ChangeState(new LeftTetherActiveState(Parent));
 				else Parent.ChangeState(new InactiveTetherState(Parent));
+				Parent.RightTether?.ToggleGrab();
 			}
 			else
 			{
@@ -164,7 +177,6 @@ public class PlayerTethering : MonoBehaviour
 
 		internal override void Enter()
 		{
-
 		}
 
 		internal override void Exit()

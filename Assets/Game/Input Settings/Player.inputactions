@@ -280,7 +280,7 @@
                 {
                     "name": "",
                     "id": "0c607f5b-2fb0-48fa-8098-a1293a4340cf",
-                    "path": "<Keyboard>/e",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -302,7 +302,7 @@
                 {
                     "name": "",
                     "id": "47167377-23d7-4879-88f5-0d6ca5708316",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -313,7 +313,7 @@
                 {
                     "name": "",
                     "id": "f249562d-1878-4b49-a638-6306c9a7c5ff",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -324,8 +324,8 @@
                 {
                     "name": "",
                     "id": "9634e2bd-2fde-42da-ae52-aff61bf0b334",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "RightGrabToggle",
@@ -335,8 +335,8 @@
                 {
                     "name": "",
                     "id": "dd38efb2-5e38-4b4f-981d-50317ae6ff95",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "Hold",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "RightGrabToggle",

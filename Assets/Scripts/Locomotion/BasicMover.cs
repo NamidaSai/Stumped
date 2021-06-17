@@ -19,6 +19,8 @@ public class BasicMover : MonoBehaviour, IMover
 	private bool playerIsTouchingObstacle;
 	private bool canJump = true;
 
+	public Transform currentTarget = null;
+
 	private AudioManager audioManager;
 
 	private void Start()
@@ -30,6 +32,13 @@ public class BasicMover : MonoBehaviour, IMover
 
 	private void FixedUpdate()
 	{
+
+		if (currentTarget != null)
+		{
+			MoveTowards(currentTarget.position);
+			return;
+		}
+
 		ApplyBonusGravity();
 		ClampMoveVelocity();
 	}
@@ -81,6 +90,16 @@ public class BasicMover : MonoBehaviour, IMover
 		myRigidbody.AddForce(moveForce);
 
 		FlipSprite(moveThrottle);
+	}
+	private void MoveTowards(Vector2 targetPosition)
+	{
+		Vector2 desiredVelocity = (Vector2)targetPosition - myRigidbody.position;
+		Vector2 desiredDirection = desiredVelocity.normalized;
+
+		desiredVelocity = desiredDirection * 500f * Time.fixedDeltaTime;
+
+		Vector2 steer = desiredVelocity - myRigidbody.velocity;
+		myRigidbody.AddForce(steer);
 	}
 
 	private void FlipSprite(Vector2 moveThrottle)

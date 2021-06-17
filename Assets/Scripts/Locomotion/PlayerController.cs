@@ -3,7 +3,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+	private bool usingTethers = false;
 	private Vector2 moveInput;
+
+	private void Start()
+	{
+		if (GetComponent<PlayerTethering>() != null)
+		{
+			Debug.Log("Using tether controls");
+			usingTethers = true;
+		}
+	}
 
 	private void FixedUpdate()
 	{
@@ -24,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
 	private void OnPickup()
 	{
+		if (usingTethers) { return; }
+
 		GetComponent<VehicleHandler>().TryPickup();
 	}
 }

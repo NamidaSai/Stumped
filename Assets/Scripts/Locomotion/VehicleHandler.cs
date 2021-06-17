@@ -10,11 +10,13 @@ public class VehicleHandler : MonoBehaviour
 	[HideInInspector] public GameObject currentPickup = null;
 
 	private AudioManager audioManager;
+	private PlayerTethering playerTethering;
 
 	private void Start()
 	{
-		InitVehicle();
 		audioManager = FindObjectOfType<AudioManager>();
+		playerTethering = GetComponent<PlayerTethering>();
+		InitVehicle();
 	}
 
 	private void InitVehicle()
@@ -36,11 +38,15 @@ public class VehicleHandler : MonoBehaviour
 			currentVehicle = allVehicles[0];
 			currentVehicle.SetActive(true);
 		}
+
+		currentState = currentVehicle.GetComponent<Pickup>().GetState();
+		CheckIfCanTether();
 	}
 
 	public void TryPickup()
 	{
 		GameObject nearestPickup = GetClosestPickup();
+		CancelTether();
 
 		if (currentPickup != null)
 		{
@@ -50,6 +56,17 @@ public class VehicleHandler : MonoBehaviour
 		if (nearestPickup != null && !nearestPickup.GetComponent<Pickup>().isUsed)
 		{
 			PickupVehicle(nearestPickup);
+		}
+	}
+
+	private void CancelTether()
+	{
+		if (GetComponentInChildren<Tether>() == null) { return; }
+
+		if (GetComponentInChildren<Tether>().grabbing)
+		{
+			GetComponentInChildren<Tether>().ToggleGrab();
+
 		}
 	}
 
@@ -90,7 +107,7 @@ public class VehicleHandler : MonoBehaviour
 		currentPickup.transform.position = targetPosition;
 	}
 
-	private void PickupVehicle(GameObject pickup)
+	public void PickupVehicle(GameObject pickup)
 	{
 		currentPickup = pickup;
 		transform.position = (Vector2)transform.position - currentPickup.GetComponent<Pickup>().offsetDrop;
@@ -149,6 +166,16 @@ public class VehicleHandler : MonoBehaviour
 	{
 		currentState = targetState;
 		SetActiveVehicle();
+		CheckIfCanTether();
+	}
+	private void CheckIfCanTether()
+	{
+		if (GetComponent<PlayerTethering>() == null) { return; }
+
+		if (currentState == LocomotionState.BASE)
+		{
+			playerTethering.canTether = true;
+		}
 	}
 
 	private void OnDrawGizmosSelected()
