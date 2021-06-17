@@ -61,7 +61,7 @@ public class EndLevel : MonoBehaviour
 
 	private IEnumerator RestartLevel()
 	{
-		yield return new WaitForSeconds(5f);
+		yield return new WaitForSeconds(4f);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 }

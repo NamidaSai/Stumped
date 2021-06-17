@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8410210157340323914}
   - component: {fileID: 8410210157340323915}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,8 @@ GameObject:
   - component: {fileID: 8410210157901730963}
   - component: {fileID: 8410210157901730961}
   - component: {fileID: 8410210157901730960}
-  m_Layer: 11
+  - component: {fileID: 6118269618397844554}
+  m_Layer: 8
   m_Name: Stolen Item
   m_TagString: WinItem
   m_Icon: {fileID: 0}
@@ -230,3 +231,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6118269618397844554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8410210157901730924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb54dc2d7bba0b14cb12dbb2a0cdae5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfPrefab: {fileID: 0}
+  respawnDelay: 3
+  state: 4
+  offsetDrop: {x: 0, y: 0}
+  hasRandomRotationDrop: 0
+  isUsed: 0

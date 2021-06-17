@@ -3,5 +3,6 @@ public enum LocomotionState
 	BASE,
 	BB8,
 	POGO,
-	FLY
+	FLY,
+	WIN
 }
