@@ -53,6 +53,7 @@ public class EndLevel : MonoBehaviour
 		levelHasEnded = true;
 		winItem.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 		winItem.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+		winItem.GetComponent<Collider2D>().enabled = false;
 		FindObjectOfType<PlayerController>().GetComponentInChildren<Animator>().SetBool("Success", true);
 		FindObjectOfType<PlayerController>().GetComponent<PlayerController>().enabled = false;
 
