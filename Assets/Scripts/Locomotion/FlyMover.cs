@@ -127,7 +127,11 @@ public class FlyMover : MonoBehaviour, IMover
 
 		PlayJumpAnimation();
 		PlayJumpSFX();
-		GetComponentInParent<VehicleHandler>().currentPickup.GetComponent<Pickup>().isUsed = true;
+
+		if (GetComponent<Pickup>().GetState() != LocomotionState.WIN)
+		{
+			GetComponentInParent<VehicleHandler>().currentPickup.GetComponent<Pickup>().isUsed = true;
+		}
 
 		flightStarted = true;
 		currentTimer = lifetime;
