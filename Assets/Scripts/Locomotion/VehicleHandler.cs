@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class VehicleHandler : MonoBehaviour
 {
-	[SerializeField] LocomotionState currentState = LocomotionState.BASE; //serialized for debugging only
+	[SerializeField] public LocomotionState currentState = LocomotionState.BASE; //serialized for debugging only
 	[SerializeField] float pickupRadius = 3f;
 	[SerializeField] LayerMask pickupLayer = default;
 	[SerializeField] GameObject[] allVehicles = default;
@@ -56,6 +56,7 @@ public class VehicleHandler : MonoBehaviour
 	public void DropVehicle()
 	{
 		if (currentPickup == null) { return; }
+		SetOffsetPosition();
 		currentPickup.SetActive(true);
 
 		if (currentPickup.GetComponent<Pickup>().GetState() == LocomotionState.FLY)
@@ -65,9 +66,6 @@ public class VehicleHandler : MonoBehaviour
 		}
 
 		SwitchState(LocomotionState.BASE);
-
-		SetOffsetPosition();
-
 
 		if (currentPickup.GetComponent<Pickup>().hasRandomRotationDrop)
 		{

@@ -24,12 +24,15 @@ public class EndLevel : MonoBehaviour
 		if (other.gameObject.tag == "WinItem")
 		{
 			winItem = other.gameObject;
-
 		}
 
 		if (other.gameObject.tag == "Player" && winItem != null)
 		{
 			TriggerEndLevel();
+		}
+		else if (other.gameObject.tag == "Player" && other.GetComponentInParent<VehicleHandler>().currentState == LocomotionState.WIN)
+		{
+			other.GetComponentInParent<VehicleHandler>().TryPickup();
 		}
 	}
 
