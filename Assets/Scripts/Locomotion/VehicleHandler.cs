@@ -91,7 +91,10 @@ public class VehicleHandler : MonoBehaviour
 	private void PickupVehicle(GameObject pickup)
 	{
 		currentPickup = pickup;
-		transform.position = (Vector2)transform.position - currentPickup.GetComponent<Pickup>().offsetDrop;
+		if (currentPickup.GetComponent<Pickup>().hasOffSetPickUp)
+		{
+			transform.position = (Vector2)transform.position - currentPickup.GetComponent<Pickup>().offsetDrop;
+		}
 		SwitchState(currentPickup.GetComponent<Pickup>().GetState());
 		PlayStateFX(currentPickup.GetComponent<Pickup>().GetState());
 		currentPickup.SetActive(false);

@@ -20,6 +20,7 @@ public class FlyMover : MonoBehaviour, IMover
 	[SerializeField] Sprite flyHalfSprite = default;
 	[SerializeField] Sprite flyEndSprite = default;
 	[SerializeField] public Sprite flyDiscardSprite = default;
+	[SerializeField] bool discardOnTimer = false;
 
 	private float currentTimer = 0f;
 	private float currentAntiGravity = 0f;
@@ -170,7 +171,10 @@ public class FlyMover : MonoBehaviour, IMover
 		flyRenderer.sprite = flyEndSprite;
 		yield return new WaitForSeconds(fadeAffordance);
 
-		GetComponentInParent<VehicleHandler>().DropVehicle();
+		if (discardOnTimer)
+		{
+			GetComponentInParent<VehicleHandler>().DropVehicle();
+		}
 	}
 
 	public void StopFlight()

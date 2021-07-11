@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 41109d4d3c4279b4587c522ca8b31374, type: 2}
+  m_Motion: {fileID: 7400000, guid: f801820981e8afb488502cc43b43635c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -74,7 +74,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7fd5689494a596c4d959f1996119db3f, type: 2}
+  m_Motion: {fileID: 7400000, guid: 121f976ce8cdd284fb6224a87e983948, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -133,7 +133,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BB8 Animator
+  m_Name: Cauldron Animator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Jump
@@ -218,7 +218,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 9d60f511a2439554a865aca2dd4ab9dc, type: 2}
+  m_Motion: {fileID: 7400000, guid: ad542c71ae6f39942a7cb5e38bf2a980, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -246,7 +246,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 56c6f0ea80790824597bab56dc45b82f, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9bc9d188ab13fd64a9bd3a44766ee574, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -274,7 +274,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 41109d4d3c4279b4587c522ca8b31374, type: 2}
+  m_Motion: {fileID: 7400000, guid: f801820981e8afb488502cc43b43635c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

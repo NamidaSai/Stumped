@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
+	[SerializeField] int loadSceneIndex = 1;
 	[SerializeField] Transform holeTransform = default;
 	[SerializeField] float itemSuckDistance = 0.3f;
 	[SerializeField] float suckedInSpeed = 0.65f;
@@ -66,6 +67,6 @@ public class EndLevel : MonoBehaviour
 	private IEnumerator RestartLevel()
 	{
 		yield return new WaitForSeconds(4f);
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		SceneManager.LoadScene(loadSceneIndex);
 	}
 }

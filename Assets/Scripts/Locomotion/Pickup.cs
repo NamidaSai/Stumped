@@ -9,6 +9,7 @@ public class Pickup : MonoBehaviour
 	[SerializeField] LocomotionState state;
 	[SerializeField] public Vector2 offsetDrop = default;
 	[SerializeField] public bool hasRandomRotationDrop = false;
+	[SerializeField] public bool hasOffSetPickUp = true;
 
 	private Vector2 startPosition;
 	private Sprite originalSprite;
