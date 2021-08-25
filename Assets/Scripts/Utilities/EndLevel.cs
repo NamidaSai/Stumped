@@ -5,15 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
-	[SerializeField] int loadSceneIndex = 1;
 	[SerializeField] Transform holeTransform = default;
 	[SerializeField] float itemSuckDistance = 0.3f;
 	[SerializeField] float suckedInSpeed = 0.65f;
+	[SerializeField] bool isEndScreen = false;
+	[SerializeField] string nextLevelMusicTrack = "level_1";
 	private GameObject winItem = null;
 	private bool levelHasEnded = false;
 
 	private void Update()
 	{
+		if (isEndScreen && !levelHasEnded) { TriggerEndLevel(); }
+
 		if (winItem != null && levelHasEnded)
 		{
 			BringItemToHole();
@@ -39,6 +42,8 @@ public class EndLevel : MonoBehaviour
 
 	private void BringItemToHole()
 	{
+		if (isEndScreen) { return; }
+
 		float distanceToItem = Vector2.Distance(winItem.transform.position, holeTransform.position);
 
 		if (distanceToItem > itemSuckDistance)
@@ -55,18 +60,35 @@ public class EndLevel : MonoBehaviour
 	private void TriggerEndLevel()
 	{
 		levelHasEnded = true;
-		winItem.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-		winItem.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-		winItem.GetComponent<Collider2D>().enabled = false;
+		if (winItem != null)
+		{
+			winItem.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+			winItem.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+			winItem.GetComponent<Collider2D>().enabled = false;
+		}
+
 		FindObjectOfType<PlayerController>().GetComponentInChildren<Animator>().SetBool("Success", true);
 		FindObjectOfType<PlayerController>().GetComponent<PlayerController>().enabled = false;
 
-		StartCoroutine(RestartLevel());
+		if (isEndScreen) { return; }
+
+		StartCoroutine(LoadNextLevel());
 	}
 
-	private IEnumerator RestartLevel()
+	private IEnumerator LoadNextLevel()
 	{
 		yield return new WaitForSeconds(4f);
-		SceneManager.LoadScene(loadSceneIndex);
+		FindObjectOfType<MusicPlayer>().Play(nextLevelMusicTrack);
+		FindObjectOfType<SceneLoader>().LoadNextScene();
+	}
+
+	public void ResetLevel()
+	{
+		FindObjectOfType<SceneLoader>().ResetScene();
+	}
+
+	public void QuitGame()
+	{
+		Application.Quit();
 	}
 }

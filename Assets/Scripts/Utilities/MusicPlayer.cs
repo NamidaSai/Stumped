@@ -30,6 +30,8 @@ public class MusicPlayer : MonoBehaviour
 
 	public void Play(string trackName)
 	{
+		if (trackName == "") { return; }
+
 		Sound track = Array.Find(tracks, trackClip => trackClip.name == trackName);
 
 		if (track == null)
@@ -48,6 +50,7 @@ public class MusicPlayer : MonoBehaviour
 			if (currentTrack.source == track.source) { return; }
 			currentTrack.source.Stop();
 			track.source.Play();
+			currentTrack = track;
 			return;
 		}
 

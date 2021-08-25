@@ -43,6 +43,16 @@ public class SceneLoader : MonoBehaviour
 		StartCoroutine(LoadSceneWithTransition(currentSceneIndex));
 	}
 
+	public void LoadSceneAtIndex(int index)
+	{
+		StartCoroutine(LoadSceneWithTransition(index));
+	}
+
+	public void SwitchMusicTrack(string trackName)
+	{
+		FindObjectOfType<MusicPlayer>().Play(trackName);
+	}
+
 	public void QuitGame()
 	{
 		Application.Quit();
