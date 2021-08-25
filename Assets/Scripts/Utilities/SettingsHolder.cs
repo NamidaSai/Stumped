@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SettingsHolder : MonoBehaviour
 {
-	private float sfxVolume = 1f;
-	private float musicVolume = 1f;
+	private float sfxVolume = 0.75f;
+	private float musicVolume = 0.75f;
 
 
 	private MusicPlayer musicPlayer;

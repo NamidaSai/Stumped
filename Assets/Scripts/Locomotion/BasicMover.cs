@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicMover : MonoBehaviour, IMover
@@ -7,6 +9,7 @@ public class BasicMover : MonoBehaviour, IMover
 	[SerializeField] float airSpeed = 5f;
 	[SerializeField] float bonusGravity = 9.8f;
 	[SerializeField] float jumpSpeed = 10f;
+	[SerializeField] float jumpCooldown = 0.2f;
 	[SerializeField] LayerMask jumpableLayers = default;
 	[SerializeField] GameObject stumpSprite = default;
 
@@ -14,6 +17,7 @@ public class BasicMover : MonoBehaviour, IMover
 	private BoxCollider2D myFeet;
 	private bool playerIsTouchingGround;
 	private bool playerIsTouchingObstacle;
+	private bool canJump = true;
 
 	private AudioManager audioManager;
 
@@ -28,10 +32,11 @@ public class BasicMover : MonoBehaviour, IMover
 	{
 		ApplyBonusGravity();
 		ClampMoveVelocity();
-		if (playerIsTouchingGround || playerIsTouchingObstacle)
-		{
-			GetComponent<Animator>().ResetTrigger("Jump");
-		}
+	}
+
+	private void OnEnable()
+	{
+		canJump = true;
 	}
 
 	private void ApplyBonusGravity()
@@ -106,16 +111,28 @@ public class BasicMover : MonoBehaviour, IMover
 	{
 		if (!playerIsTouchingGround && !playerIsTouchingObstacle) { return; }
 
+		if (!canJump) { return; }
+
 		PlayJumpAnimation();
 		PlayJumpSFX();
 
 		float currentJumpSpeed = jumpSpeed * 100f;
 		Vector2 jumpForce = new Vector2(0f, currentJumpSpeed);
 		myRigidbody.AddForce(jumpForce);
+
+		StartCoroutine(WaitBeforeJump());
+	}
+
+	private IEnumerator WaitBeforeJump()
+	{
+		canJump = false;
+		yield return new WaitForSeconds(jumpCooldown);
+		canJump = true;
 	}
 
 	private void PlayJumpSFX()
 	{
+		audioManager.Play("JumpGrunt");
 		switch (GetComponent<Pickup>().GetState())
 		{
 			case LocomotionState.BB8:

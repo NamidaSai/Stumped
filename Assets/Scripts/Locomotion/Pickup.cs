@@ -7,13 +7,17 @@ public class Pickup : MonoBehaviour
 	[SerializeField] GameObject selfPrefab = default;
 	[SerializeField] float respawnDelay = 3f;
 	[SerializeField] LocomotionState state;
-	[SerializeField] public bool isOneTimeOnly = false;
+	[SerializeField] public Vector2 offsetDrop = default;
+	[SerializeField] public bool hasRandomRotationDrop = false;
+	[SerializeField] public bool hasOffSetPickUp = true;
 
 	private Vector2 startPosition;
+	private Sprite originalSprite;
 
 	private void Start()
 	{
 		startPosition = transform.position;
+		originalSprite = GetComponentInChildren<SpriteRenderer>().sprite;
 	}
 
 	public bool isUsed = false;
@@ -31,6 +35,7 @@ public class Pickup : MonoBehaviour
 		{
 			GameObject newPickup = Instantiate(selfPrefab, startPosition, Quaternion.identity);
 			newPickup.GetComponent<Pickup>().isUsed = false;
+			newPickup.GetComponentInChildren<SpriteRenderer>().sprite = originalSprite;
 		}
 
 		VanishFX();

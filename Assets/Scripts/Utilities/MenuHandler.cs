@@ -5,22 +5,20 @@ using UnityEngine.UI;
 
 public class MenuHandler : MonoBehaviour
 {
-	[SerializeField] GameObject tutorialMenu = default;
+	[SerializeField] GameObject mainMenu = default;
 	[SerializeField] GameObject optionsMenu = default;
 	[SerializeField] Slider sfxVolumeSlider = default;
 	[SerializeField] Slider musicVolumeSlider = default;
 
 
 	bool isOptionsMenu = false;
-	bool isTutorialMenu = false;
-
 	SettingsHolder settings;
 
 	private void Start()
 	{
 		settings = FindObjectOfType<SettingsHolder>();
 		optionsMenu.SetActive(false);
-		tutorialMenu.SetActive(false);
+		mainMenu.SetActive(true);
 		AddListeners();
 		ResetParameters();
 	}
@@ -39,39 +37,17 @@ public class MenuHandler : MonoBehaviour
 
 	public void GoToOptionsMenu()
 	{
-		if (isTutorialMenu)
-		{
-			GoToTutorialMenu();
-		}
-
 		if (!isOptionsMenu)
 		{
 			optionsMenu.SetActive(true);
+			mainMenu.SetActive(false);
 			isOptionsMenu = true;
 		}
 		else
 		{
 			optionsMenu.SetActive(false);
+			mainMenu.SetActive(true);
 			isOptionsMenu = false;
-		}
-	}
-
-	public void GoToTutorialMenu()
-	{
-		if (isOptionsMenu)
-		{
-			GoToOptionsMenu();
-		}
-
-		if (!isTutorialMenu)
-		{
-			tutorialMenu.SetActive(true);
-			isTutorialMenu = true;
-		}
-		else
-		{
-			tutorialMenu.SetActive(false);
-			isTutorialMenu = false;
 		}
 	}
 

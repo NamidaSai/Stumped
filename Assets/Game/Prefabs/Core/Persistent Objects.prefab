@@ -1,5 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1025644484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1025644485}
+  - component: {fileID: 1025644486}
+  m_Layer: 0
+  m_Name: Settings Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1025644485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025644484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2310268206789386694}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1025644486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025644484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844c4f67d73ce134081a2f7dec11df8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2310268206617883379
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +105,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BB8Pickup
     clip: {fileID: 8300000, guid: 97c1189d863d4a04ea934de681db1bd0, type: 3}
-    volume: 0.5
+    volume: 0.35
     pitch: 1
     randomPitch: 1
     loop: 0
@@ -70,7 +113,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: POGOPickup
     clip: {fileID: 8300000, guid: e97c4cf9ebdd0a9418c8e107205ebf2b, type: 3}
-    volume: 0.5
+    volume: 0.35
     pitch: 1
     randomPitch: 1
     loop: 0
@@ -78,7 +121,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: FLYPickup
     clip: {fileID: 8300000, guid: 14225abdbb69b38438200b028ccc04ae, type: 3}
-    volume: 0.5
+    volume: 0.35
     pitch: 1
     randomPitch: 1
     loop: 0
@@ -102,17 +145,41 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: POGOJump
     clip: {fileID: 8300000, guid: f381a588a51cf1f48905a89e07c5514d, type: 3}
-    volume: 0.5
+    volume: 0.2
     pitch: 1
     randomPitch: 1
     loop: 0
     stopOnPause: 0
     source: {fileID: 0}
   - name: BASEJump
-    clip: {fileID: 8300000, guid: 997e7e043d07b5f4eac76970d54a37d4, type: 3}
-    volume: 0.05
+    clip: {fileID: 8300000, guid: 9ac180ef94e448240ad1ee7da1e7e95f, type: 3}
+    volume: 0.04
     pitch: 1
     randomPitch: 1
+    loop: 0
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: FLYJump
+    clip: {fileID: 8300000, guid: 92eb3f45a3fe53b4886ca3c68bc9379a, type: 3}
+    volume: 0.3
+    pitch: 1
+    randomPitch: 0
+    loop: 1
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: BaseCollision
+    clip: {fileID: 8300000, guid: 9ac180ef94e448240ad1ee7da1e7e95f, type: 3}
+    volume: 0.02
+    pitch: 1
+    randomPitch: 1
+    loop: 0
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: JumpGrunt
+    clip: {fileID: 8300000, guid: 7bd3d728f00a96e4a8814f4c328dc0cd, type: 3}
+    volume: 0.2
+    pitch: 1
+    randomPitch: 0
     loop: 0
     stopOnPause: 0
     source: {fileID: 0}
@@ -146,6 +213,7 @@ Transform:
   m_Children:
   - {fileID: 2310268206617883376}
   - {fileID: 2310268207774107441}
+  - {fileID: 1025644485}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -206,7 +274,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracks:
   - name: intro
-    clip: {fileID: 8300000, guid: 89ea06baf00fd934b9751678f1c3c7a9, type: 3}
+    clip: {fileID: 8300000, guid: ba146bf139a7d9d4db042c7827437390, type: 3}
+    volume: 0.15
+    pitch: 1
+    randomPitch: 0
+    loop: 1
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: level_1
+    clip: {fileID: 8300000, guid: 365c1c09de8f79a4a89515173d1993b4, type: 3}
+    volume: 0.15
+    pitch: 1
+    randomPitch: 0
+    loop: 1
+    stopOnPause: 0
+    source: {fileID: 0}
+  - name: endScreen
+    clip: {fileID: 8300000, guid: d717ff815c1ffaf4a83be6e804234e02, type: 3}
     volume: 0.15
     pitch: 1
     randomPitch: 0

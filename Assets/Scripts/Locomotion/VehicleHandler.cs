@@ -2,13 +2,12 @@ using UnityEngine;
 
 public class VehicleHandler : MonoBehaviour
 {
-	[SerializeField] LocomotionState currentState = LocomotionState.BASE; //serialized for debugging only
+	[SerializeField] public LocomotionState currentState = LocomotionState.BASE; //serialized for debugging only
 	[SerializeField] float pickupRadius = 3f;
-	[SerializeField] Vector2 dropOffset = default;
 	[SerializeField] LayerMask pickupLayer = default;
 	[SerializeField] GameObject[] allVehicles = default;
 	private GameObject currentVehicle = null;
-	private GameObject currentPickup = null;
+	[HideInInspector] public GameObject currentPickup = null;
 
 	private AudioManager audioManager;
 
@@ -56,29 +55,46 @@ public class VehicleHandler : MonoBehaviour
 
 	public void DropVehicle()
 	{
+		if (currentPickup == null) { return; }
+		SetOffsetPosition();
 		currentPickup.SetActive(true);
 
-		if (currentPickup.GetComponent<Pickup>().isOneTimeOnly)
+		if (currentPickup.GetComponent<Pickup>().GetState() == LocomotionState.FLY)
 		{
-			currentPickup.GetComponent<Pickup>().isUsed = true;
+			GetComponentInChildren<FlyMover>().StopFlight();
 			StartCoroutine(currentPickup.GetComponent<Pickup>().Respawn());
 		}
 
 		SwitchState(LocomotionState.BASE);
 
-		Vector2 targetPosition = (Vector2)transform.position + dropOffset;
-		float targetRotation = Random.Range(-180f, 180f);
-		currentPickup.transform.position = targetPosition;
-		currentPickup.transform.eulerAngles = new Vector3(currentPickup.transform.eulerAngles.x,
-    							currentPickup.transform.eulerAngles.y,
-    							currentPickup.transform.eulerAngles.z + targetRotation);
+		if (currentPickup.GetComponent<Pickup>().hasRandomRotationDrop)
+		{
+			float targetRotation = Random.Range(-180f, 180f);
+			currentPickup.transform.eulerAngles = new Vector3(currentPickup.transform.eulerAngles.x,
+								    currentPickup.transform.eulerAngles.y,
+								    currentPickup.transform.eulerAngles.z + targetRotation);
+		}
+		else
+		{
+			currentPickup.transform.rotation = Quaternion.identity;
+		}
 
 		currentPickup = null;
+	}
+
+	private void SetOffsetPosition()
+	{
+		Vector2 targetPosition = (Vector2)transform.position + currentPickup.GetComponent<Pickup>().offsetDrop;
+		currentPickup.transform.position = targetPosition;
 	}
 
 	private void PickupVehicle(GameObject pickup)
 	{
 		currentPickup = pickup;
+		if (currentPickup.GetComponent<Pickup>().hasOffSetPickUp)
+		{
+			transform.position = (Vector2)transform.position - currentPickup.GetComponent<Pickup>().offsetDrop;
+		}
 		SwitchState(currentPickup.GetComponent<Pickup>().GetState());
 		PlayStateFX(currentPickup.GetComponent<Pickup>().GetState());
 		currentPickup.SetActive(false);
@@ -144,6 +160,10 @@ public class VehicleHandler : MonoBehaviour
 
 	private void SetActiveVehicle()
 	{
+		Animator vehicleAnimator = currentVehicle.GetComponent<Animator>();
+		vehicleAnimator.Rebind();
+		vehicleAnimator.Update(0f);
+
 		currentVehicle.SetActive(false);
 
 		foreach (GameObject vehicle in allVehicles)

@@ -7,12 +7,20 @@ public class FlyMover : MonoBehaviour, IMover
 	[SerializeField] float lifetime = 5f;
 	[SerializeField] float settleGravity = 9.8f;
 	[SerializeField] float fadeDelay = 4f;
+	[SerializeField] float fadeAffordance = 1f;
 	[SerializeField] float moveSpeed = 12f;
 	[SerializeField] float maxSpeedMove = 1.5f;
 	[SerializeField] float maxSpeedFlight = 24f;
 	[SerializeField] float airSpeed = 24f;
 	[SerializeField] float antiGravity = 9.8f;
 	[SerializeField] float jumpSpeed = 1f;
+	[SerializeField] GameObject stumpSprite = default;
+	[SerializeField] SpriteRenderer flyRenderer = default;
+	[SerializeField] Sprite flyStartSprite = default;
+	[SerializeField] Sprite flyHalfSprite = default;
+	[SerializeField] Sprite flyEndSprite = default;
+	[SerializeField] public Sprite flyDiscardSprite = default;
+	[SerializeField] bool discardOnTimer = false;
 
 	private float currentTimer = 0f;
 	private float currentAntiGravity = 0f;
@@ -22,11 +30,19 @@ public class FlyMover : MonoBehaviour, IMover
 	private Rigidbody2D myRigidbody;
 	private BoxCollider2D myFeet;
 	private bool playerIsTouchingGround;
+	private bool playerIsTouchingObstacle;
+	private AudioManager audioManager;
 
 	private void Start()
 	{
 		myRigidbody = GetComponentInParent<Rigidbody2D>();
 		myFeet = GetComponent<BoxCollider2D>();
+		audioManager = FindObjectOfType<AudioManager>();
+	}
+
+	private void OnEnable()
+	{
+		flyRenderer.GetComponent<SpriteRenderer>().sprite = flyStartSprite;
 	}
 
 	private void Update()
@@ -37,9 +53,10 @@ public class FlyMover : MonoBehaviour, IMover
 	private void FixedUpdate()
 	{
 		ApplyBonusGravity();
-		if (playerIsTouchingGround)
+		if (playerIsTouchingGround || playerIsTouchingObstacle)
 		{
 			ClampMoveVelocity(maxSpeedMove);
+			GetComponent<Animator>().ResetTrigger("Jump");
 		}
 		else
 		{
@@ -76,7 +93,6 @@ public class FlyMover : MonoBehaviour, IMover
 
 		if (playerIsTouchingGround)
 		{
-			// moveSpeedX = 0f;
 			moveSpeedX = moveSpeed * Time.deltaTime * moveThrottle.x;
 		}
 		else
@@ -88,7 +104,7 @@ public class FlyMover : MonoBehaviour, IMover
 		Vector2 moveForce = new Vector2(currentMoveSpeed, 0f);
 		myRigidbody.AddForce(moveForce);
 
-		// FlipSprite(moveThrottle);
+		FlipSprite(moveThrottle);
 	}
 
 	private void FlipSprite(Vector2 moveThrottle)
@@ -97,13 +113,26 @@ public class FlyMover : MonoBehaviour, IMover
 
 		if (playerHasHorizontalSpeed)
 		{
-			transform.localScale = new Vector3(Mathf.Sign(moveThrottle.x), transform.localScale.y, transform.localScale.z);
+			GetComponent<Animator>().SetBool("isWalking", true);
+			stumpSprite.transform.localScale = new Vector3(Mathf.Sign(moveThrottle.x), stumpSprite.transform.localScale.y, stumpSprite.transform.localScale.z);
+		}
+		else
+		{
+			GetComponent<Animator>().SetBool("isWalking", false);
 		}
 	}
 
 	public void Jump()
 	{
-		if (!playerIsTouchingGround) { return; }
+		if (!playerIsTouchingGround && !playerIsTouchingObstacle) { return; }
+
+		PlayJumpAnimation();
+		PlayJumpSFX();
+
+		if (GetComponent<Pickup>().GetState() != LocomotionState.WIN)
+		{
+			GetComponentInParent<VehicleHandler>().currentPickup.GetComponent<Pickup>().isUsed = true;
+		}
 
 		flightStarted = true;
 		currentTimer = lifetime;
@@ -119,6 +148,7 @@ public class FlyMover : MonoBehaviour, IMover
 		if (currentTimer <= 0f && flightStarted)
 		{
 			StartCoroutine(FlyFade());
+			flyRenderer.sprite = flyHalfSprite;
 			return;
 		}
 
@@ -136,8 +166,36 @@ public class FlyMover : MonoBehaviour, IMover
 
 	private IEnumerator FlyFade()
 	{
-		yield return new WaitForSeconds(fadeDelay);
-		GetComponentInParent<VehicleHandler>().DropVehicle();
+		yield return new WaitForSeconds(fadeDelay - fadeAffordance);
+
+		flyRenderer.sprite = flyEndSprite;
+		yield return new WaitForSeconds(fadeAffordance);
+
+		if (discardOnTimer)
+		{
+			GetComponentInParent<VehicleHandler>().DropVehicle();
+		}
+	}
+
+	public void StopFlight()
+	{
+		GetComponentInParent<VehicleHandler>().currentPickup.GetComponentInChildren<SpriteRenderer>().sprite = flyDiscardSprite;
+		audioManager.Stop("FLYJump");
 		flightStarted = false;
+	}
+
+	private void PlayJumpSFX()
+	{
+		audioManager.Play("FLYJump");
+	}
+
+	private void PlayJumpAnimation()
+	{
+		if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+		{
+			GetComponent<Animator>().ResetTrigger("Jump");
+			return;
+		}
+		GetComponent<Animator>().SetTrigger("Jump");
 	}
 }
