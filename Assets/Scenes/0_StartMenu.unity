@@ -11442,6 +11442,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 788452161771491060, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
+      propertyPath: m_text
+      value: Play
+      objectReference: {fileID: 0}
     - target: {fileID: 788452161771491067, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11450,6 +11454,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 21241428}
+    - target: {fileID: 788452162037760586, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 788452162037760586, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 788452162037760586, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -171
+      objectReference: {fileID: 0}
     - target: {fileID: 5814259926731734836, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

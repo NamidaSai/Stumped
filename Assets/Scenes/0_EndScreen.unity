@@ -13199,9 +13199,9 @@ RectTransform:
   m_Father: {fileID: 1102632059}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 1443, y: 365}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -476, y: -175}
   m_SizeDelta: {x: 900, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975422064
@@ -13454,12 +13454,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 788452162037760586, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 788452162037760586, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 788452162037760586, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 788452162037760586, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 788452162037760586, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -171
       objectReference: {fileID: 0}
     - target: {fileID: 788452162133511105, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
       propertyPath: m_IsActive
@@ -13520,6 +13532,14 @@ PrefabInstance:
     - target: {fileID: 5814259927795293623, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7734341160916453072, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1550304121}
+    - target: {fileID: 7734341160916453072, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
