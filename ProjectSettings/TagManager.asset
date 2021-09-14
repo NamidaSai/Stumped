@@ -54,6 +54,9 @@ TagManager:
   - name: Foreground
     uniqueID: 2507827757
     locked: 0
+  - name: FX
+    uniqueID: 1465917455
+    locked: 0
   - name: Interactables
     uniqueID: 1934946897
     locked: 0

@@ -5,22 +5,25 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
 	[SerializeField] GameObject selfPrefab = default;
+	[SerializeField] GameObject highlightAffordance = default;
 	[SerializeField] float respawnDelay = 3f;
 	[SerializeField] LocomotionState state;
 	[SerializeField] public Vector2 offsetDrop = default;
 	[SerializeField] public bool hasRandomRotationDrop = false;
 	[SerializeField] public bool hasOffSetPickUp = true;
 
+	[HideInInspector]
+	public bool isUsed = false;
+
 	private Vector2 startPosition;
 	private Sprite originalSprite;
+	private bool isHighlighted = false;
 
 	private void Start()
 	{
 		startPosition = transform.position;
 		originalSprite = GetComponentInChildren<SpriteRenderer>().sprite;
 	}
-
-	public bool isUsed = false;
 
 	public LocomotionState GetState()
 	{
@@ -45,5 +48,11 @@ public class Pickup : MonoBehaviour
 	{
 		if (gameObject == null) { return; }
 		Destroy(gameObject);
+	}
+
+	public void ToggleContextHighlight()
+	{
+		isHighlighted = !isHighlighted;
+		highlightAffordance.SetActive(isHighlighted);
 	}
 }

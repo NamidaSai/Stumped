@@ -9,12 +9,44 @@ public class VehicleHandler : MonoBehaviour
 	private GameObject currentVehicle = null;
 	[HideInInspector] public GameObject currentPickup = null;
 
+	private Pickup highlightedPickup = null;
+
 	private AudioManager audioManager;
 
 	private void Start()
 	{
 		InitVehicle();
 		audioManager = FindObjectOfType<AudioManager>();
+	}
+
+	private void Update() 
+	{
+		if (GetClosestPickup() != null)
+		{
+			HighlightClosestPickup();			
+		}
+		else if (highlightedPickup != null)
+		{
+			highlightedPickup.ToggleContextHighlight();
+			highlightedPickup = null;
+		}
+	}
+
+	private void HighlightClosestPickup()
+	{
+		Pickup closestPickup = GetClosestPickup().GetComponent<Pickup>();
+
+		if (closestPickup == highlightedPickup) { return; }
+
+		if (closestPickup.isUsed) { return; }
+		
+		if (highlightedPickup != null)
+		{
+			highlightedPickup.ToggleContextHighlight();
+		}
+
+		closestPickup.ToggleContextHighlight();
+		highlightedPickup = closestPickup;
 	}
 
 	private void InitVehicle()
@@ -61,6 +93,7 @@ public class VehicleHandler : MonoBehaviour
 
 		if (currentPickup.GetComponent<Pickup>().GetState() == LocomotionState.FLY)
 		{
+			currentPickup.GetComponent<Pickup>().isUsed = true;
 			GetComponentInChildren<FlyMover>().StopFlight();
 			StartCoroutine(currentPickup.GetComponent<Pickup>().Respawn());
 		}
