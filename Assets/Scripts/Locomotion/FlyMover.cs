@@ -43,6 +43,7 @@ public class FlyMover : MonoBehaviour, IMover
 	private void OnEnable()
 	{
 		flyRenderer.GetComponent<SpriteRenderer>().sprite = flyStartSprite;
+		GetComponentInChildren<ParticleSystem>().Stop();
 	}
 
 	private void Update()
@@ -181,6 +182,7 @@ public class FlyMover : MonoBehaviour, IMover
 	{
 		GetComponentInParent<VehicleHandler>().currentPickup.GetComponentInChildren<SpriteRenderer>().sprite = flyDiscardSprite;
 		audioManager.Stop("FLYJump");
+		GetComponentInChildren<ParticleSystem>().Stop();
 		flightStarted = false;
 	}
 
@@ -197,5 +199,6 @@ public class FlyMover : MonoBehaviour, IMover
 			return;
 		}
 		GetComponent<Animator>().SetTrigger("Jump");
+		GetComponentInChildren<ParticleSystem>().Play();
 	}
 }
