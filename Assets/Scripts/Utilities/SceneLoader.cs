@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
 	[SerializeField] float transitionDelay = 1f;
+	[SerializeField] float awakeDelay = 0f;
+	[SerializeField] bool loadNextOnAwake = false;
 	[SerializeField] GameObject fader = default;
 
 	int currentSceneIndex;
@@ -18,8 +20,8 @@ public class SceneLoader : MonoBehaviour
 
 	private IEnumerator Start()
 	{
-		yield return new WaitForSeconds(transitionDelay);
-		if (currentSceneIndex == 0)
+		yield return new WaitForSeconds(transitionDelay + awakeDelay);
+		if (currentSceneIndex == 0 || loadNextOnAwake)
 		{
 			LoadNextScene();
 		}

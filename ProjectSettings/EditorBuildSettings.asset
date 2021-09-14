@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/0_SlashScreen.unity
     guid: 1ada5a3817bb8914f8b4d72ed5847482
   - enabled: 1
+    path: Assets/Scenes/0_CutScene1.unity
+    guid: 23f5105aa8a746846870d0ad2c8f4443
+  - enabled: 1
+    path: Assets/Scenes/0_CutScene2.unity
+    guid: 764193ca6f3e88648b954c47e09a3864
+  - enabled: 1
     path: Assets/Scenes/0_StartMenu.unity
     guid: 6334f61387e4e0942886a9783374db84
   - enabled: 1
