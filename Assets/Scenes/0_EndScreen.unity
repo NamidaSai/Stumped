@@ -13470,6 +13470,10 @@ PrefabInstance:
       value: LoadSceneAtIndex
       objectReference: {fileID: 0}
     - target: {fileID: 788452161771491067, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 788452161771491067, guid: bfe960877b39d1b4c90ed53142471c14, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: level_1
       objectReference: {fileID: 0}
