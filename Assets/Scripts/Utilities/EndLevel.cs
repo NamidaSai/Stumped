@@ -69,6 +69,7 @@ public class EndLevel : MonoBehaviour
 
 		FindObjectOfType<PlayerController>().GetComponentInChildren<Animator>().SetBool("Success", true);
 		FindObjectOfType<PlayerController>().GetComponent<PlayerController>().enabled = false;
+		FindObjectOfType<AudioManager>().Stop("FLYJump");
 
 		if (isEndScreen) { return; }
 

@@ -12,6 +12,7 @@ public class Breakable : MonoBehaviour
 		if (other.gameObject.GetComponentInChildren<Pickup>() != null && other.gameObject.GetComponentInChildren<Pickup>().GetState() == LocomotionState.BB8)
 		{
 			TriggerFX();
+			FindObjectOfType<AudioManager>().Play("BlockBreak");
 			Destroy(gameObject);
 		}
 	}

@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2310268206617883377, guid: 0c4a8c6f03b3ba74aa0fc8226d1a84fd, type: 3}
+      propertyPath: sounds.Array.data[12].volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2310268206789386688, guid: 0c4a8c6f03b3ba74aa0fc8226d1a84fd, type: 3}
       propertyPath: m_Name
       value: Persistent Objects
@@ -803,7 +807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1477046364247806468, guid: ddb54d02f5c89fc4796b2e3e9367024c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.780492
+      value: -4.787778
       objectReference: {fileID: 0}
     - target: {fileID: 1477046364247806468, guid: ddb54d02f5c89fc4796b2e3e9367024c, type: 3}
       propertyPath: m_LocalPosition.y

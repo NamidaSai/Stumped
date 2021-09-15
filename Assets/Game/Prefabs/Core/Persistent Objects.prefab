@@ -183,6 +183,14 @@ MonoBehaviour:
     loop: 0
     stopOnPause: 0
     source: {fileID: 0}
+  - name: BlockBreak
+    clip: {fileID: 8300000, guid: 53250f908dc2b5446967c7336ba69413, type: 3}
+    volume: 0.05
+    pitch: 1
+    randomPitch: 1
+    loop: 0
+    stopOnPause: 1
+    source: {fileID: 0}
 --- !u!1 &2310268206789386688
 GameObject:
   m_ObjectHideFlags: 0
